@@ -77,7 +77,7 @@ exports.conf = {
   katagori: "Ekonomi"
 };
 exports.help = {
-  name: "cüzdan",
+  name: "bakiye",
   description: "Bakiyenizi gösterir.",
   usage: "cüzdan <@kullanıcı>"
 };
