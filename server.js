@@ -44,17 +44,17 @@ require('./util/eventLoader')(client);
 //////////////////////////////////////////////
 client.ayarlar = {
 "durum":"dnd",//online , idle , dnd 
-"oynuyor":"sa",
+"oynuyor":"Bum Be Asreaper!",
 "prefix":"w!",
-"sahip":"300573341591535617",
+"sahip":"675589088254099486",
 "token":"Token"
 }
-/////////////////////////////////////////////
+/////////////////////ASREAPER////////////////////////
 client.ekoayarlar = {
   parabirimi: "TL",
-  botunuzunprefixi: "w!",
-  botunuzunidsi: "637943210261479424",
-  botismi: "Woxe Deneme",
+  botunuzunprefixi: "!",
+  botunuzunidsi: "",
+  botismi: "Deneme",
   renk: "RANDOM", //İNGİLİZCE TERCİH ETTİĞİNİZ RENGİ YAZINIZ! EĞER BÖYLE BIRAKIRSANIZ RASTGELE ATAR!
   isimsiz: "Bilinmiyor", //İSİMSİZ KİŞİLERİN HANGİ İSİM İLE GÖZÜKECEĞİNİ BELİRLEYEBİLİRSİNİZ!
   rastgelepara: true, //EĞER BUNU TRUE YAPARSANIZ RASTGELE PARA VERME ÖZELLİĞİ AKTİF OLUR VE GÜNLÜK PARALARI RASTGELE VERİR!
@@ -65,7 +65,7 @@ client.ekoayarlar = {
   dblkey: "KEY", //EĞER DBLOY U AKTİF ETMEDİYSENİZ BURAYA KEY EKLEMENİZE GEREK YOK EĞER AKTİF ETTİYSENİZ DBL SİTESİNDEN BULABİLİRSİNİZ!
   dblmsj: "Bu komutu kullanabilmek için bota oy vermelisiniz. Oy vermek için !oyver", //EĞER DBLOY U AKTİF ETMEDİYSENİZ BURAYA MESAJ YAZMANIZA GEREK YOK! EĞER AKTİF ETTİYSENİZ BOTA OY VERMEK İÇİN HANGİ MESAJI YAZACAĞINI AYARLAYABİLİRSİNİZ.
   başlangıçparası: 50, //EĞER RASTGELE PARAYI TRUE YAPTIYSANIZ BURAYI ELLEMENİZE GEREK YOK!
-  admin: ["300573341591535617"]
+  admin: ["675589088254099486"]
 }
 const kurulum = message => {
   console.log(`Kurulum: ${message}`);

@@ -3,7 +3,7 @@ const db = require('quick.db');
 var ayarlar = require('../ayarlar.json');
 
 
-//BUNUN İÇİN ÇOK UĞRAŞTIM <3
+//asreaper
 
 exports.run = async (client, message, args) => {
   

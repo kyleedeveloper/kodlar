@@ -1,4 +1,4 @@
-//canvastır beğenmediyseniz #ekonomi yazarak oradaki cüzdanı alabilirsiniz
+//asreaper
 const Discord = require("discord.js");
 const db = require("quick.db");
 var ayarlar = require("../ayarlar.json");

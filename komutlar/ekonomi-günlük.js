@@ -15,8 +15,7 @@ function getRandomInt(min, max) {
 
 /*
 
-BU KOMUDU HAZIRLADIĞI İÇİN HİVIN GARDAŞIMA ÇOK TEŞG EDİYORUM...
-SONRADA EDİTLEDİĞİM İÇİN KENDİME TEŞG EDİYORUM...
+asreaper
 
 
 */
