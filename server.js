@@ -45,7 +45,7 @@ require('./util/eventLoader')(client);
 client.ayarlar = {
 "durum":"dnd",//online , idle , dnd 
 "oynuyor":"Bum Be Asreaper!",
-"prefix":"w!",
+"prefix":"!",
 "sahip":"675589088254099486",
 "token":"Token"
 }
