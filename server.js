@@ -47,7 +47,7 @@ client.ayarlar = {
 "oynuyor":"Bum Be Asreaper!",
 "prefix":"!",
 "sahip":"675589088254099486",
-"token":"Token"
+"token":"NzM5NTUwNjI3OTQzNjc4MDg0.XycGMQ.adPOHhBq9lpC-LpuVQ1qmsPREB8"
 }
 /////////////////////ASREAPER////////////////////////
 client.ekoayarlar = {
