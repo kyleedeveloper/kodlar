@@ -45,16 +45,16 @@ require('./util/eventLoader')(client);
 client.ayarlar = {
 "durum":"dnd",//online , idle , dnd 
 "oynuyor":"Bum Be Asreaper!",
-"prefix":"!",
-"sahip":"675589088254099486",
-"token":"NzM5NTUwNjI3OTQzNjc4MDg0.XycGMQ.adPOHhBq9lpC-LpuVQ1qmsPREB8"
+"prefix":"BOTPREFİX",
+"sahip":"SAHİPİD",
+"token":"BOTTOKEN"
 }
 /////////////////////ASREAPER////////////////////////
 client.ekoayarlar = {
   parabirimi: "TL",
-  botunuzunprefixi: "!",
-  botunuzunidsi: "",
-  botismi: "Deneme",
+  botunuzunprefixi: "PREFİX",
+  botunuzunidsi: "BOTİD",
+  botismi: "BOTİSMİ",
   renk: "RANDOM", //İNGİLİZCE TERCİH ETTİĞİNİZ RENGİ YAZINIZ! EĞER BÖYLE BIRAKIRSANIZ RASTGELE ATAR!
   isimsiz: "Bilinmiyor", //İSİMSİZ KİŞİLERİN HANGİ İSİM İLE GÖZÜKECEĞİNİ BELİRLEYEBİLİRSİNİZ!
   rastgelepara: true, //EĞER BUNU TRUE YAPARSANIZ RASTGELE PARA VERME ÖZELLİĞİ AKTİF OLUR VE GÜNLÜK PARALARI RASTGELE VERİR!
