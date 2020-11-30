@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
           if(hesapismi) {
             const embedczdnv2 = new Discord.MessageEmbed()
             .setColor(client.ekoayarlar.renk)
-            .setDescription(`Hesap İsmi: ${hesapismi}\n Bakiye: ${bakiye}\n Hesap Oluşturma Tarihi: **${hesaptarihay}/ ${hesaptarihgün}/${hesaptarihyıl}** gününde hesabın oluşturuldu!`)
+            .setDescription(`Hesap İsmi: ${hesapismi}\n Bakiye: ${bakiye}\n Hesap Oluşturma Tarihi: *${hesaptarihay}/ ${hesaptarihgün}/${hesaptarihyıl}* gününde hesabın oluşturuldu!`)
             message.channel.send(embedczdnv2)
           }
         }
