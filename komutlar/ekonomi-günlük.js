@@ -13,12 +13,6 @@ function getRandomInt(min, max) {
 }
 
 
-/*
-
-asreaper
-
-
-*/
 
 exports.run = async (client, message, args) => {
     let timeout = 86400000 //bunu ellemeyin 24 saat 

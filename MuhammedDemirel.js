@@ -44,17 +44,16 @@ require('./util/eventLoader')(client);
 //////////////////////////////////////////////
 client.ayarlar = {
 "durum":"dnd",//online , idle , dnd 
-"oynuyor":"Bum Be Asreaper!",
+"oynuyor":"Youtube: Muhammed Demirel",
 "prefix":"!",
-"sahip":"SAHİPİD",
-"token":"BOTTOKEN"
+"sahip":"721126378833051670",
+"token":"NzgyOTgzMjc0ODMwMTAyNTI4.X8UH_w._H9z4wHAUFWkHVauMFfrqNLUiEU"
 }
-/////////////////////ASREAPER////////////////////////
 client.ekoayarlar = {
   parabirimi: "TL", //Para Birimi TL İsterseniz Dolar Euro Vb. Para Birimleri Girebilirsiniz.
-  botunuzunprefixi: "PREFİX",
-  botunuzunidsi: "BOTİD",
-  botismi: "BOTİSMİ",
+  botunuzunprefixi: "!",
+  botunuzunidsi: "782983274830102528",
+  botismi: "V12 Ekonomi Botu",
   renk: "RANDOM", //İNGİLİZCE TERCİH ETTİĞİNİZ RENGİ YAZINIZ! EĞER BÖYLE BIRAKIRSANIZ RASTGELE ATAR!
   isimsiz: "Bilinmiyor", //İSİMSİZ KİŞİLERİN HANGİ İSİM İLE GÖZÜKECEĞİNİ BELİRLEYEBİLİRSİNİZ!
   rastgelepara: true, //EĞER BUNU TRUE YAPARSANIZ RASTGELE PARA VERME ÖZELLİĞİ AKTİF OLUR VE GÜNLÜK PARALARI RASTGELE VERİR!
@@ -65,7 +64,7 @@ client.ekoayarlar = {
   dblkey: "KEY", //EĞER DBLOY U AKTİF ETMEDİYSENİZ BURAYA KEY EKLEMENİZE GEREK YOK EĞER AKTİF ETTİYSENİZ DBL SİTESİNDEN BULABİLİRSİNİZ!
   dblmsj: "Bu komutu kullanabilmek için bota oy vermelisiniz. Oy vermek için !oyver", //EĞER DBLOY U AKTİF ETMEDİYSENİZ BURAYA MESAJ YAZMANIZA GEREK YOK! EĞER AKTİF ETTİYSENİZ BOTA OY VERMEK İÇİN HANGİ MESAJI YAZACAĞINI AYARLAYABİLİRSİNİZ.
   başlangıçparası: 50, //EĞER RASTGELE PARAYI TRUE YAPTIYSANIZ BURAYI ELLEMENİZE GEREK YOK!
-  admin: ["675589088254099486"]
+  admin: ["721126378833051670"]
 }
 const kurulum = message => {
   console.log(`Kurulum: ${message}`);
