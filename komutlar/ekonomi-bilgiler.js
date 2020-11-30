@@ -17,14 +17,14 @@ exports.run = async (client, message, args) => {
   } else {
     if(hesapdurumu) {
       if(!hesapismi) {
-        const embedczdn = new Discord.RichEmbed()
+        const embedczdn = new Discord.MessageEmbed()
         .setColor(client.ekoayarlar.renk)
         .setDescription(`Hesap İsmi: ${client.ekoayarlar.isimsiz}\n Hesap Bakiyesi: ${bakiye}\n Hesap Oluşturma Tarihi: Bilinmiyor`)
         message.channel.send(embedczdn)
       } else {
         if(hesapdurumu) {
           if(hesapismi) {
-            const embedczdnv2 = new Discord.RichEmbed()
+            const embedczdnv2 = new Discord.MessageEmbed()
             .setColor(client.ekoayarlar.renk)
             .setDescription(`Hesap İsmi: ${hesapismi}\n Bakiye: ${bakiye}\n Hesap Oluşturma Tarihi: **${hesaptarihay}/ ${hesaptarihgün}/${hesaptarihyıl}** gününde hesabın oluşturuldu!`)
             message.channel.send(embedczdnv2)

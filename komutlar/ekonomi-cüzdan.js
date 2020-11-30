@@ -10,11 +10,12 @@ const request = require('node-superfetch');
 
 exports.run = async (client, message, args) => {
   let member = message.author;
+  let member2 = message.mentions.members.first()
   let kllanç = message.mentions.users.first() || message.author;
   const bakiye = await db.fetch(`bakiyecdare-${kllanç.id}`);
   const hesapdurumu = await db.fetch(`hesapdurumcodare-${kllanç.id}`);
   const hesapismi = await db.fetch(`hesapismiçodare-${kllanç.id}`);
-
+if(!member2) return message.reply("Bir Kullanıcı Etiketlermisin.")
   if (!hesapdurumu) {
     if (args[0])
       return message.reply(
@@ -25,8 +26,7 @@ exports.run = async (client, message, args) => {
     );
   } else {
     if (hesapdurumu) {
-      if (!hesapismi) {
-        const embedczdn = new Discord.RichEmbed()
+        const embedczdn = new Discord.MessageEmbed()
           .setColor(client.ekoayarlar.renk)
           .setDescription(
             `Hesap İsmi: ${client.ekoayarlar.isimsiz}\n Bakiye: **${bakiye}**`
@@ -65,7 +65,7 @@ exports.run = async (client, message, args) => {
           }
         }
       }
-    }
+    
   }
 };
 

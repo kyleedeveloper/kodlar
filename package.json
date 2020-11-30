@@ -16,7 +16,7 @@
     "colors": "^1.4.0",
     "common-tags": "^1.8.0",
     "dblapi.js": "^2.3.0",
-    "discord.js": "^11.5.1",
+    "discord.js": "^12.5.1",
     "encrypt_decrypt": "^1.0.0",
     "express": "^4.17.1",
     "ffmpeg": "^0.0.4",
