@@ -3,8 +3,7 @@ const db = require('quick.db');
 var ayarlar = require('../ayarlar.json');
 
 
-//asreaper
-//Rich
+
 exports.run = async (client, message, args) => {
   
   let transkllanç = message.mentions.users.first()

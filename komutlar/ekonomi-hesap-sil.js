@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const db = require('quick.db');
 const ayarlar = require('../ayarlar.json')
 
-//asreaper
+
 
 exports.run = async (client, message, args) => {
   if(!client.ekoayarlar.admin.includes(message.author.id)) return message.reply(`bunu yapabilmek için gerekli yetkiye sahip değilsin!`)

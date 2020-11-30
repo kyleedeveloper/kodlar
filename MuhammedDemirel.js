@@ -51,7 +51,7 @@ client.ayarlar = {
 }
 /////////////////////ASREAPER////////////////////////
 client.ekoayarlar = {
-  parabirimi: "TL",
+  parabirimi: "TL", //Para Birimi TL İsterseniz Dolar Euro Vb. Para Birimleri Girebilirsiniz.
   botunuzunprefixi: "PREFİX",
   botunuzunidsi: "BOTİD",
   botismi: "BOTİSMİ",
