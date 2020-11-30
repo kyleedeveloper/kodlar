@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
   const hesapdurumu = await db.fetch(`hesapdurumcodare-${message.author.id}`);
   const kasasayisi = kasalar.length
   if(!hesapdurumu) return message.reply(`İlk olarak hesap oluşturmalısın. ${client.ekoayarlar.botunuzunprefixi}hesap-oluştur <Hesap İsmi>`)
-  const kasaidembeds = new Discord.RichEmbed()
+  const kasaidembeds = new Discord.MessageEmbed()
   .setTitle(`Bir kasa İD si girmelisin!`)
   .setFooter(`Kasa listesine bakmak için: ${client.ekoayarlar.botunuzunprefixi}kasalar`)
   .setColor(client.ekoayarlar.renk)

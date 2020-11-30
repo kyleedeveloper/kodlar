@@ -29,7 +29,7 @@ if(!member2) return message.reply("Bir Kullanıcı Etiketlermisin.")
         const embedczdn = new Discord.MessageEmbed()
           .setColor(client.ekoayarlar.renk)
           .setDescription(
-            `Hesap İsmi: ${client.ekoayarlar.isimsiz}\n Bakiye: **${bakiye}**`
+            `Hesap İsmi: ${hesapismi ? hesapismi : 'Bilinmiyor.'}\n Bakiye: **${bakiye}**`
           );
         message.channel.send(embedczdn);
       } else {

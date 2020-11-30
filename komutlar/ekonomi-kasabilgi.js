@@ -5,7 +5,7 @@ const kasalar = require('.././kasalar');
 exports.run = async (client, message, args) => {
   const kasaid = args[0];
   const kasasayisi = kasalar.length
-  const kasaidembeds = new Discord.RichEmbed()
+  const kasaidembeds = new Discord.MessageEmbed()
   .setTitle(`Bir kasa İD si girmelisin!`)
   .setFooter(`Kasa listesine bakmak için: ${client.ekoayarlar.botunuzunprefixi}kasalar`)
   .setColor(client.ekoayarlar.renk)
@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
   const kasalarfilter = kasalar.filter(x => x.kasaid == kasaid).map(x => `Kasa İsmi: **${x.isim}** Kasa Fiyatı: **${x.fiyat}** Kasa Açıklaması: **${x.açıklama}**`).join('\n ')
   const icindekiler = require(`.././kasa${kasaid}`)
   const kasalariçindekilerfilter = icindekiler.map(x => x).join(' ')
-  const embed = new Discord.RichEmbed()
+  const embed = new Discord.MessageEmbed()
   .addField(`Kasa Bilgisi (İD: ${kasaid})`, `${kasalarfilter}`)
   .addField(`İçindekiler;`, `${kasalariçindekilerfilter}`)
   .setFooter(`Kasa listesine bakmak için: ${client.ekoayarlar.botunuzunprefixi}kasalar`)

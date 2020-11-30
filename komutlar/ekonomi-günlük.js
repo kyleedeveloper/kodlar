@@ -35,7 +35,7 @@ exports.run = async (client, message, args) => {
         if(client.ekoayarlar.rastgelepara == true) {
           const randomizer = getRandomInt(client.ekoayarlar.minpara, client.ekoayarlar.maxpara)
           db.add(`bakiyecdare-${message.author.id}`, randomizer)
-          let para1 = new Discord.RichEmbed()
+          let para1 = new Discord.MessageEmbed()
           .setColor(client.ekoayarlar.renk)
           .setDescription(`**Günlük Para**`)
           .addField(`Aldığınız Miktar;`, randomizer + ` ${client.ekoayarlar.parabirimi}`)
@@ -43,7 +43,7 @@ exports.run = async (client, message, args) => {
         } else {
           if(client.ekoayarlar.rastgelepara == false) {
             db.add(`bakiyecdare-${message.author.id}`, client.ekoayarlar.günlükpara)
-            let para1 = new Discord.RichEmbed()
+            let para1 = new Discord.MessageEmbed()
             .setColor(client.ekoayarlar.renk)
             .setDescription(`**Günlük Para**`)
             .addField(`Aldığınız Miktar;`, client.ekoayarlar.günlükpara + ` ${client.ekoayarlar.parabirimi}`)
@@ -59,7 +59,7 @@ exports.run = async (client, message, args) => {
               if(client.ekoayarlar.rastgelepara == true) {
                 const randomizer = getRandomInt(client.ekoayarlar.minpara, client.ekoayarlar.maxpara)
                 db.add(`bakiyecdare-${message.author.id}`, randomizer)
-                let para1 = new Discord.RichEmbed()
+                let para1 = new Discord.MessageEmbed()
                 .setColor(client.ekoayarlar.renk)
                 .setDescription(`**Günlük Para**`)
                 .addField(`Aldığınız Miktar;`, randomizer + ` ${client.ekoayarlar.parabirimi}`)
@@ -67,7 +67,7 @@ exports.run = async (client, message, args) => {
               } else {
                 if(client.ekoayarlar.rastgelepara == false) {
                   db.add(`bakiyecdare-${message.author.id}`, client.ekoayarlar.günlükpara)
-                  let para1 = new Discord.RichEmbed()
+                  let para1 = new Discord.MessageEmbed()
                   .setColor(client.ekoayarlar.renk)
                   .setDescription(`**Günlük Para**`)
                   .addField(`Aldığınız Miktar;`, client.ekoayarlar.günlükpara + ` ${client.ekoayarlar.parabirimi}`)
