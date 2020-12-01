@@ -19,7 +19,6 @@ exports.run = async (client, message, args) => {
       if(!hesapismi) {
         const embedczdn = new Discord.MessageEmbed()
         .setColor(client.ekoayarlar.renk)
-        .setDescription(`Hesap İsmi: ${client.ekoayarlar.isimsiz}\n Hesap Bakiyesi: ${bakiye}\n Hesap Oluşturma Tarihi: Bilinmiyor`)
         message.channel.send(embedczdn)
       } else {
         if(hesapdurumu) {
@@ -27,11 +26,12 @@ exports.run = async (client, message, args) => {
             const embedczdnv2 = new Discord.MessageEmbed()
             .setColor(client.ekoayarlar.renk)
      .setDescription(`Hesap İsmi: ${hesapismi}\n Bakiye: ${bakiye}\n Hesap Oluşturma Tarihi: *${hesaptarihay}/ ${hesaptarihgün}/${hesaptarihyıl}* gününde hesabın oluşturuldu!
-     Hesap İsmi : 
+     Hesap İsmi : ${hesapismi}
+     Toplam Bakiye : ${bakiye}
+     Hesap Oluşturma Tarihi : Gün :  ${hesaptarihgün} / Yıl :  ${hesaptarihyıl} Ay : ${hesaptarihay} 
      
      `)
 
-            .setDescription(`Hesap İsmi: ${hesapismi}\n Bakiye: ${bakiye}\n Hesap Oluşturma Tarihi: *${hesaptarihay}/ ${hesaptarihgün}/${hesaptarihyıl}* gününde hesabın oluşturuldu!`)
             message.channel.send(embedczdnv2)
           }
         }
@@ -48,7 +48,7 @@ exports.conf = {
     katagori: "Ekonomi"
 }
 exports.help = {
-    name: 'bilgiler',
+    name: 'bilgiler-yardım',
     description: 'Bilgilerinizi gösterir.',
     usage: 'bilgiler <@kullanıcı>',
 }
