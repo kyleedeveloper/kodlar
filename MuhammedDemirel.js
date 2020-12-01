@@ -47,7 +47,7 @@ client.ayarlar = {
 "oynuyor":"Youtube: Muhammed Demirel",
 "prefix":"!",
 "sahip":"721126378833051670",
-"token":"NzgyOTgzMjc0ODMwMTAyNTI4.X8UH_w._H9z4wHAUFWkHVauMFfrqNLUiEU"
+"token":""
 }
 client.ekoayarlar = {
   parabirimi: "TL", //Para Birimi TL İsterseniz Dolar Euro Vb. Para Birimleri Girebilirsiniz.
