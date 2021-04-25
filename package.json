@@ -1,7 +1,7 @@
 {
   "name": "hello-express",
   "version": "1.0.0",
-  "description": "Yunus Emre/ Muhammed Demirel EKONOMİ BOTU ALTYAPISI" ,
+  "description": "Yunus Emre/ Muhammed Demirel EKONOMİ BOTU ALTYAPISI",
   "descrtiption2": "Muhammed Demirel Abone Olmayanın Kafası Yere Çarpıp Ayağı KAfasına Çarpıp Kafasıda Kendine Çarpıp Ölsün. Bide Çalmayın",
   "main": "MuhammedDemirel.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "array-sort": "^1.0.0",
     "brawlstars": "^1.2.4",
-    "canvas": "^2.6.1",
+    "canvas": "^2.7.0",
     "chalk": "^4.1.0",
     "cleverbot-node": "^0.3.11",
     "cleverbot.io": "^1.0.4",
@@ -55,7 +55,5 @@
     "node": "11.x"
   },
   "license": "MIT",
-  "keywords": [
-
-  ]
+  "keywords": []
 }
