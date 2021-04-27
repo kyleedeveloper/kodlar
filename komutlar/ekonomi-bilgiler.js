@@ -7,8 +7,8 @@ exports.run = async (client, message, args) => {
   const bakiye = await db.fetch(`bakiyeasreaper-${kllanç.id}`);
   const hesapdurumu = await db.fetch(`hesapdurumasreaper-${kllanç.id}`);
   const hesapismi = await db.fetch(`hesapismiasreaper-${kllanç.id}`);
-  const hesaptarihyıl = await db.fetch(`hesaptarihiasreaper-${kllanç.id}`);
-  const hesaptarihay = await db.fetch(`hesaptarihiayasreaper-${kllanç.id}`);
+  const hesaptarihyıl = await db.fetch(`hesaptarihyılasreaper-${kllanç.id}`);
+  const hesaptarihay = await db.fetch(`hesaptarihayasreaper-${kllanç.id}`);
   const hesaptarihgün = await db.fetch(`hesaptarihgünasreaper-${kllanç.id}`)
   
   if(!hesapdurumu) {
@@ -43,7 +43,7 @@ exports.conf = {
     katagori: "Ekonomi"
 }
 exports.help = {
-    name: 'bilgiler',
+    name: 'bilgilerim',
     description: 'Asreaper',
     usage: 'Asreaper',
 }

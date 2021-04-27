@@ -44,7 +44,7 @@ require('./util/eventLoader')(client);
 //////////////////////////////////////////////
 client.ayarlar = {
 "durum":"dnd",//online , idle , dnd 
-"oynuyor":"Youtube: Muhammed Demirel",
+"oynuyor":"Youtube: Asreaper",
 "prefix":"!",
 "sahip":"721126378833051670",
 }
