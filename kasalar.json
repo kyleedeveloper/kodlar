@@ -28,6 +28,12 @@
     "açıklama": "EFSANEVİ bir kasa dikkatli açılması önerilir.",
 		"fiyat": "3000",
     "kasaid": "5"
+	},
+  	{
+		"isim": "Asreaper Deneme Kasası",
+    "açıklama": "Deneme Kasası",
+		"fiyat": "5000",
+    "kasaid": "6"
 	}
 
   
