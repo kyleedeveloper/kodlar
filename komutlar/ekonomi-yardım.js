@@ -16,6 +16,8 @@ exports.run = (client, message) => {
  **${Prefix}kasa-aç** \n->  Kasa Açarsın
   **${Prefix}kasa-bilgi** \n->  Kasalar Hakkında Bilgi Alırsın
  **${Prefix}transfer** \n->  Belirtilen Kişiye Belirtilen Miktarda Para Gönderirsin
+  **${Prefix}kasaaç <Kasaid>** \n->  Belirtilen İD'ye Sahip Kasayı Açarsın
+
 
 
 `)
