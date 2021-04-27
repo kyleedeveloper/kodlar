@@ -4,12 +4,12 @@ var ayarlar = require('../ayarlar.json');
 
 exports.run = async (client, message, args) => {
   let kllanç = message.mentions.users.first() || message.author;
-  const bakiye = await db.fetch(`bakiyecdare-${kllanç.id}`);
-  const hesapdurumu = await db.fetch(`hesapdurumcodare-${kllanç.id}`);
-  const hesapismi = await db.fetch(`hesapismiçodare-${kllanç.id}`);
-  const hesaptarihyıl = await db.fetch(`hesaptarihiçdayreyıl-${kllanç.id}`);
-  const hesaptarihay = await db.fetch(`hesaptarihiçdayreay-${kllanç.id}`);
-  const hesaptarihgün = await db.fetch(`hesaptarihiçdayregün-${kllanç.id}`)
+  const bakiye = await db.fetch(`bakiyeasreaper-${kllanç.id}`);
+  const hesapdurumu = await db.fetch(`hesapdurumasreaper-${kllanç.id}`);
+  const hesapismi = await db.fetch(`hesapismiasreaper-${kllanç.id}`);
+  const hesaptarihyıl = await db.fetch(`hesaptarihiasreaper-${kllanç.id}`);
+  const hesaptarihay = await db.fetch(`hesaptarihiayasreaper-${kllanç.id}`);
+  const hesaptarihgün = await db.fetch(`hesaptarihgünasreaper-${kllanç.id}`)
   
   if(!hesapdurumu) {
     if(args[0]) return message.reply(`Bakmak istediğin kullanıcının bir hesabı bulunmamakta.`)
@@ -44,6 +44,6 @@ exports.conf = {
 }
 exports.help = {
     name: 'bilgiler',
-    description: 'Bilgilerinizi gösterir.',
-    usage: 'bilgiler <@kullanıcı>',
+    description: 'Asreaper',
+    usage: 'Asreaper',
 }

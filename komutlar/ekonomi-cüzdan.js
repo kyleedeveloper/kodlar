@@ -12,9 +12,9 @@ exports.run = async (client, message, args) => {
   let member = message.author;
   let member2 = message.mentions.members.first()
   let kllanç = message.mentions.users.first() || message.author;
-  const bakiye = await db.fetch(`bakiyecdare-${kllanç.id}`);
-  const hesapdurumu = await db.fetch(`hesapdurumcodare-${kllanç.id}`);
-  const hesapismi = await db.fetch(`hesapismiçodare-${kllanç.id}`);
+  const bakiye = await db.fetch(`bakiyeasreaper-${kllanç.id}`);
+  const hesapdurumu = await db.fetch(`hesapdurumasreaper-${kllanç.id}`);
+  const hesapismi = await db.fetch(`hesapismiasreaper-${kllanç.id}`);
 if(!member2) return message.reply("Bir Kullanıcı Etiketlermisin.")
   if (!hesapdurumu) {
     if (args[0])
@@ -78,6 +78,6 @@ exports.conf = {
 };
 exports.help = {
   name: "bakiye",
-  description: "Bakiyenizi gösterir.",
-  usage: "cüzdan <@kullanıcı>"
+  description: "Asreaper",
+  usage: "Asreaper"
 };

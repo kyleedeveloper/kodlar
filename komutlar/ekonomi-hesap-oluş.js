@@ -59,6 +59,6 @@ exports.conf = {
 }
 exports.help = {
     name: 'hesap-oluştur',
-    description: 'Bakiyenizi gösterir.',
-    usage: 'cüzdan <@kullanıcı>',
+    description: 'Asreaper',
+    usage: 'Asreaper',
 }

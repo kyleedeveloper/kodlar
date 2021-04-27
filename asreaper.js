@@ -47,7 +47,6 @@ client.ayarlar = {
 "oynuyor":"Youtube: Muhammed Demirel",
 "prefix":"!",
 "sahip":"721126378833051670",
-"token":""
 }
 client.ekoayarlar = {
   parabirimi: "TL", //Para Birimi TL İsterseniz Dolar Euro Vb. Para Birimleri Girebilirsiniz.
@@ -141,4 +140,4 @@ client.unload = command => {
 };
 
 
-client.login(ayarlar.token); 
+client.login(process.env.token);

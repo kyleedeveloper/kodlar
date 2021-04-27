@@ -1,11 +1,11 @@
 {
   "name": "hello-express",
   "version": "1.0.0",
-  "description": "Yunus Emre/ Muhammed Demirel EKONOMİ BOTU ALTYAPISI",
-  "descrtiption2": "Muhammed Demirel Abone Olmayanın Kafası Yere Çarpıp Ayağı KAfasına Çarpıp Kafasıda Kendine Çarpıp Ölsün. Bide Çalmayın",
-  "main": "MuhammedDemirel.js",
+  "description": "ASreaper Ekonomi Botu",
+  "descrtiption2": "ASreaper Yotube Kanalında Paylaşılmıştır",
+  "main": "asreaper.js",
   "scripts": {
-    "start": "node MuhammedDemirel.js"
+    "start": "node asreaper.js"
   },
   "dependencies": {
     "array-sort": "^1.0.0",
