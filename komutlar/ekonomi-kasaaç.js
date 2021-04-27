@@ -4,7 +4,7 @@ const kasalar = require('.././kasalar');
 exports.run = async (client, message, args) => {
   const kasaid = args[0];
   const bakiye = await db.fetch(`bakiyeasreaper-${message.author.id}`);
-  const hesapdurumu = await db.fetch(`hesapdurumcodare-${message.author.id}`);
+  const hesapdurumu = await db.fetch(`hesapdurumasreaper-${message.author.id}`);
   const kasasayisi = kasalar.length
   if(!hesapdurumu) return message.reply(`İlk olarak hesap oluşturmalısın. ${client.ekoayarlar.botunuzunprefixi}hesap-oluştur <Hesap İsmi>`)
   const kasaidembeds = new Discord.MessageEmbed()
@@ -73,6 +73,6 @@ exports.conf = {
 
 exports.help = {
     name: 'kasa-aç',
-    description: 'Belirttiğiniz İD deki kasayı açarsınız.',
-    usage: 'kasa-aç <Kasa-İD>'
+    description: 'Asreaper',
+    usage: 'Asreaper'
 }

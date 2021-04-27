@@ -14,13 +14,13 @@ exports.run = async (client, message, args) => {
   if(transkllanç.bot == true) return message.channel.send(`Botlara para gönderemezsiniz.`)
   if(!transkllanç) return message.channel.send(`Bir kullanıcı girmelisiniz. Doğru Kullanım;\n\`${client.ekoayarlar.botunuzunprefixi}transfer @${client.user.tag} 50\``)
   if(!para) return message.channel.send(`Bir miktar girmelisiniz. Doğru Kullanım;\n\`${client.ekoayarlar.botunuzunprefixi}transfer @${client.user.tag} 50\``)
-  const bakiye = await db.fetch(`bakiyecdare-${kllanç.id}`);
-  const hesapdurumu = await db.fetch(`hesapdurumcodare-${kllanç.id}`);
-  const hesapismi = await db.fetch(`hesapismiçodare-${kllanç.id}`);
+  const bakiye = await db.fetch(`bakiyeasreaper-${kllanç.id}`);
+  const hesapdurumu = await db.fetch(`hesapdurumasreaper-${kllanç.id}`);
+  const hesapismi = await db.fetch(`hesapismiasreaper-${kllanç.id}`);
   
-  const transbakiye = await db.fetch(`bakiyecdare-${transkllanç.id}`);
-  const transhesapdurumu = await db.fetch(`hesapdurumcodare-${transkllanç.id}`);
-  const transhesapismi = await db.fetch(`hesapismiçodare-${transkllanç.id}`);
+  const transbakiye = await db.fetch(`bakiyeasreaper-${transkllanç.id}`);
+  const transhesapdurumu = await db.fetch(`hesapdurumasreaper-${transkllanç.id}`);
+  const transhesapismi = await db.fetch(`hesapismiasreaper-${transkllanç.id}`);
   
   if(!hesapdurumu) {
     message.reply(`İlk olarak hesap oluşturmalısın. ${client.ekoayarlar.botunuzunprefixi}hesap-oluştur <Hesap İsmi>`)
@@ -34,8 +34,8 @@ exports.run = async (client, message, args) => {
             if(bakiye < para) return message.channel.send(`:warning: Paranız Yetersiz!`)
             if(!transhesapdurumu) return message.channel.send(`Transfer etmek istediğin kullanıcının bir hesabı bulunmamakta.`)
             if(transhesapdurumu) {
-                db.add(`bakiyecdare-${message.author.id}`, -para)
-                db.add(`bakiyecdare-${transkllanç.id}`, para)
+                db.add(`bakiyeasreaper-${message.author.id}`, -para)
+                db.add(`bakiyeasreaper-${transkllanç.id}`, para)
                 transkllanç.send(`${message.author.tag} adlı kullanıcı size \`${para} ${client.ekoayarlar.parabirimi}\` yolladı`)
                 message.channel.send(`${transkllanç} adlı kullanıcıya başarıyla \`${para} ${client.ekoayarlar.parabirimi}\` yolladınız.`)
               }
@@ -55,6 +55,6 @@ exports.conf = {
 }
 exports.help = {
     name: 'transfer',
-    description: 'Hesabınızdan başka bir hesaba para transferi yaparsınız.',
-    usage: 'transfer <@kullanıcı>',
+    description: 'Asreaper',
+    usage: 'Asreaper',
 }

@@ -29,12 +29,11 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: ['kasabilgi', 'kasabilgisi', 'kasa'],
-    permLevel: 0,
-    katagori: "Ekonomi"
+    permLevel: 0
 }
 
 exports.help = {
     name: 'kasa-bilgi',
-    description: 'Kasalar hakkında bilgi alırsınız.',
-    usage: 'kasa-bilgi <Kasa-İD>'
+    description: 'Asreaper',
+    usage: 'Asreaper'
 }

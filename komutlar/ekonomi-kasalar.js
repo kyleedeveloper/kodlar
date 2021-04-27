@@ -23,6 +23,6 @@ exports.conf = {
 
 exports.help = {
     name: 'kasalar',
-    description: 'Kasaları listeler.',
-    usage: 'kasalar'
+    description: 'Asreaper',
+    usage: 'Asreaper'
 }
