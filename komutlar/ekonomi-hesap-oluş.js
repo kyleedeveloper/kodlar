@@ -9,9 +9,9 @@ function getRandomInt(min, max) {
 
 exports.run = async (client, message, args, perms) => {
   const isim = args.slice(0).join(' ');
-  const bakiye = await db.fetch(`bakiyeasreaper-${message.author.id}`);
-  const hesapdurumu = await db.fetch(`hesapdurumasreaper-${message.author.id}`);
-  const hesapismi = await db.fetch(`hesapismiasreaper-${message.author.id}`);
+  const bakiye = await db.fetch(`bakiyeulash-${message.author.id}`);
+  const hesapdurumu = await db.fetch(`hesapdurumulash-${message.author.id}`);
+  const hesapismi = await db.fetch(`hesapismiulash-${message.author.id}`);
   
   
   if(hesapdurumu) return message.channel.send(`Bir hesabınız bulunmakta. Geçerli hesabınızın bilgilerini öğrenmek için: \n\`${client.ekoayarlar.botunuzunprefixi}bligilerim\``);
@@ -20,29 +20,29 @@ exports.run = async (client, message, args, perms) => {
   if(!hesapdurumu) {
 if(!hesapismi) {
       
-  db.set(`hesapdurumasreaper-${message.author.id}`, "aktif");
+  db.set(`hesapdurumulash-${message.author.id}`, "aktif");
       message.channel.send("Hesabınız aktif edildi!")
       if(client.ekoayarlar.rastgelepara == true) {
-        db.set(`hesapismiasreaper-${message.author.id}`, isim)
+        db.set(`hesapismiulash-${message.author.id}`, isim)
         const yıl = new Date().getFullYear();
         const ay = new Date().getDate();
         const gün = new Date().getMonth();
-        db.set(`hesaptarihyılasreaper-${message.author.id}`, yıl)
-        db.set(`hesaptarihayasreaper-${message.author.id}`, ay)
-        db.set(`hesaptarihgünasreaper-${message.author.id}`, gün)
+        db.set(`hesaptarihyılulash-${message.author.id}`, yıl)
+        db.set(`hesaptarihayulash-${message.author.id}`, ay)
+        db.set(`hesaptarihgünulash-${message.author.id}`, gün)
         const randomizer = getRandomInt(client.ekoayarlar.minpara, client.ekoayarlar.maxpara)
-        db.add(`bakiyeasreaper-${message.author.id}`, randomizer)
+        db.add(`bakiyeulash-${message.author.id}`, randomizer)
         message.channel.send(`Başlangıç parası rastgele olarak **${randomizer} ${client.ekoayarlar.parabirimi}** hesabınıza yatırıldı!`)
       } else {
         if(client.ekoayarlar.rastgelepara == false) {
-          db.set(`hesapismiasreaper-${message.author.id}`, isim)
+          db.set(`hesapismiulash-${message.author.id}`, isim)
           const yıl = new Date().getFullYear();
           const ay = new Date().getDate();
           const gün = new Date().getMonth();
-          db.set(`hesaptarihyılasreaper-${message.author.id}`, yıl)
-          db.set(`hesaptarihayasreaper-${message.author.id}`, ay)
-          db.set(`hesaptarihgünasreaper-${message.author.id}`, gün)
-          db.add(`bakiyeasreaper-${message.author.id}`, client.ekoayarlar.başlangıçparası)
+          db.set(`hesaptarihyılulash-${message.author.id}`, yıl)
+          db.set(`hesaptarihayulash-${message.author.id}`, ay)
+          db.set(`hesaptarihgünulash-${message.author.id}`, gün)
+          db.add(`bakiyeulash-${message.author.id}`, client.ekoayarlar.başlangıçparası)
           message.channel.send(`Başlangıç parası olarak **${client.ekoayarlar.başlangıçparası} ${client.ekoayarlar.parabirimi}** hesabınıza yatırıldı!`)
         }
       }
@@ -59,6 +59,6 @@ exports.conf = {
 }
 exports.help = {
     name: 'hesap-oluştur',
-    description: 'Asreaper',
-    usage: 'Asreaper',
+    description: 'ulash',
+    usage: 'ulash',
 }

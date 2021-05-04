@@ -1,10 +1,10 @@
-const AsreaperDiscord = require('discord.js');
-const AsreaperClient = new AsreaperDiscord.Client();
+const ulashDiscord = require('discord.js');
+const ulashClient = new ulashDiscord.Client();
 const ayarlar = require('../ayarlar.json');
 let Prefix = ayarlar.prefix
 
 exports.run = (client, message) => {
- const AsreaperEmbed = new AsreaperDiscord.MessageEmbed()
+ const ulashEmbed = new ulashDiscord.MessageEmbed()
   .setColor(0xff000)
  .setAuthor(`${client.user.username} | Ekonomi Sistemi Yardım Menüsü`)
  .setDescription(`
@@ -21,9 +21,9 @@ exports.run = (client, message) => {
 
 
 `)
- .setFooter(`Asreaper Ekonomi Botu`)
+ .setFooter(`ulash Ekonomi Botu`)
  .setTimestamp()
- message.channel.send(AsreaperEmbed)
+ message.channel.send(ulashEmbed)
 }
 exports.conf = {
   enabled: true,

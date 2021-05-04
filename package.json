@@ -1,11 +1,11 @@
 {
   "name": "hello-express",
   "version": "1.0.0",
-  "description": "ASreaper Ekonomi Botu",
-  "descrtiption2": "ASreaper Yotube Kanalında Paylaşılmıştır",
-  "main": "asreaper.js",
+  "description": "Ulash Studio Ekonomi Botu",
+  "descrtiption2": "Ulash Studio Yotube Kanalında Paylaşılmıştır",
+  "main": "ulash.js",
   "scripts": {
-    "start": "node asreaper.js"
+    "start": "node ulash.js"
   },
   "dependencies": {
     "array-sort": "^1.0.0",

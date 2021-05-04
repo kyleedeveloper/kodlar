@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
         db.set(`günlükkullanımgodareçdare-${message.author.id}`, Date.now())
         if(client.ekoayarlar.rastgelepara == true) {
           const randomizer = getRandomInt(client.ekoayarlar.minpara, client.ekoayarlar.maxpara)
-          db.add(`bakiyeasreaper-${message.author.id}`, randomizer)
+          db.add(`bakiyeulash-${message.author.id}`, randomizer)
           let para1 = new Discord.MessageEmbed()
           .setColor(client.ekoayarlar.renk)
           .setDescription(`**Günlük Para**`)
@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
           message.channel.send(para1)
         } else {
           if(client.ekoayarlar.rastgelepara == false) {
-            db.add(`bakiyeasreaper-${message.author.id}`, client.ekoayarlar.günlükpara)
+            db.add(`bakiyeulash-${message.author.id}`, client.ekoayarlar.günlükpara)
             let para1 = new Discord.MessageEmbed()
             .setColor(client.ekoayarlar.renk)
             .setDescription(`**Günlük Para**`)
@@ -86,6 +86,6 @@ exports.conf = {
 
 exports.help = {
     name: 'günlükpara',
-    description: 'Asreaper',
-    usage: 'Asreaper'
+    description: 'Ulash Studio',
+    usage: 'Ulash Studio'
 }

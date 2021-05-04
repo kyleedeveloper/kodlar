@@ -8,12 +8,12 @@ exports.run = async (client, message, args) => {
   const silinecekkllnc = message.mentions.members.first();
   let para = args[1]
   if(!silinecekkllnc) return message.channel.send(`Bir kullanıcı belirtmelisin!`)
-  const bakiye = await db.fetch(`bakiyeasreaper-${silinecekkllnc.id}`);
-  const hesapdurumu = await db.fetch(`hesapdurumasreaper-${silinecekkllnc.id}`);
-  const hesapismi = await db.fetch(`hesapismiasreaper-${silinecekkllnc.id}`);
+  const bakiye = await db.fetch(`bakiyeulash-${silinecekkllnc.id}`);
+  const hesapdurumu = await db.fetch(`hesapdurumulash-${silinecekkllnc.id}`);
+  const hesapismi = await db.fetch(`hesapismiulash-${silinecekkllnc.id}`);
   
   if(!hesapdurumu) return message.channel.send(`Kayıtlı olan bir kullanıcı belirtmelisin!`)
-  await db.add(`bakiyeasreaper-${silinecekkllnc.id}`, para)
+  await db.add(`bakiyeulash-${silinecekkllnc.id}`, para)
   
   
   message.channel.send(`:+1:`)
@@ -28,6 +28,6 @@ exports.conf = {
 
 exports.help = {
     name: 'ekle',
-    description: 'Asreaper',
-    usage: 'Asreaper'
+    description: 'ulash',
+    usage: 'ulash'
 }

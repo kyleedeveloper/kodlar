@@ -78,6 +78,6 @@ exports.conf = {
 };
 exports.help = {
   name: "bakiye",
-  description: "Asreaper",
-  usage: "Asreaper"
+  description: "Ulash Studio",
+  usage: "Ulash Studio"
 };

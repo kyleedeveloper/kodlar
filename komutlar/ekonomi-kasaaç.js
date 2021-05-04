@@ -3,8 +3,8 @@ const db = require('quick.db')
 const kasalar = require('.././kasalar');
 exports.run = async (client, message, args) => {
   const kasaid = args[0];
-  const bakiye = await db.fetch(`bakiyeasreaper-${message.author.id}`);
-  const hesapdurumu = await db.fetch(`hesapdurumasreaper-${message.author.id}`);
+  const bakiye = await db.fetch(`bakiyeulash-${message.author.id}`);
+  const hesapdurumu = await db.fetch(`hesapdurumulash-${message.author.id}`);
   const kasasayisi = kasalar.length
   if(!hesapdurumu) return message.reply(`İlk olarak hesap oluşturmalısın. ${client.ekoayarlar.botunuzunprefixi}hesap-oluştur <Hesap İsmi>`)
   const kasaidembeds = new Discord.MessageEmbed()
@@ -31,7 +31,7 @@ exports.run = async (client, message, args) => {
   }
   if (uwu) {
     try {
-      db.add(`bakiyeasreaper-${message.author.id}`, -kasafiyat)
+      db.add(`bakiyeulash-${message.author.id}`, -kasafiyat)
       message.channel.send("Kasa Açılıyor.").then(async msg => {
         const icindekiler = require(`.././kasa${kasaid}`)
         setTimeout(() => {
@@ -53,7 +53,7 @@ exports.run = async (client, message, args) => {
         setTimeout(() => {
           const icindeki = icindekiler[Math.floor(Math.random() * icindekiler.length)];
           message.channel.send(`Kasadan \`${icindeki}\` ${client.ekoayarlar.parabirimi} kazandın!`)
-          db.add(`bakiyeasreaper-${message.author.id}`, icindeki)
+          db.add(`bakiyeulash-${message.author.id}`, icindeki)
         }, 7800)
       })
       //const activity = activitys[Math.floor(Math.random() * activitys.length)];
@@ -73,6 +73,6 @@ exports.conf = {
 
 exports.help = {
     name: 'kasa-aç',
-    description: 'Asreaper',
-    usage: 'Asreaper'
+    description: 'ulash',
+    usage: 'ulash'
 }

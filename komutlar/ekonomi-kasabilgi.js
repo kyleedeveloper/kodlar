@@ -34,6 +34,6 @@ exports.conf = {
 
 exports.help = {
     name: 'kasa-bilgi',
-    description: 'Asreaper',
-    usage: 'Asreaper'
+    description: 'ulash',
+    usage: 'ulash'
 }
