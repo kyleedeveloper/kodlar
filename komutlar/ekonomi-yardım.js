@@ -6,7 +6,7 @@ let Prefix = ayarlar.prefix
 exports.run = (client, message) => {
  const ulashEmbed = new ulashDiscord.MessageEmbed()
   .setColor(0xff000)
- .setAuthor(`${client.user.username} | Ekonomi Sistemi Yardım Menüsü`)
+ .setAuthor(`${client.user.username} | Kylee Yardım Menüsü`)
  .setDescription(`
  **${Prefix}bilgilerim** \n-> Hesap Bilgisini Gösterir
  **${Prefix}bakiye** \n-> Bakiyeyi Gösterir
@@ -21,7 +21,7 @@ exports.run = (client, message) => {
 
 
 `)
- .setFooter(`ulash Ekonomi Botu`)
+ .setFooter(``)
  .setTimestamp()
  message.channel.send(ulashEmbed)
 }
