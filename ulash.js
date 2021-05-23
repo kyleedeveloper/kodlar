@@ -8,6 +8,7 @@ const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json')
 const YouTube = require('simple-youtube-api');
 const ffmpeg = require('ffmpeg');
+const DCanvas = require("discord-canvas");
 const youtube = new YouTube('apikey');
 const ytdl = require('ytdl-core');
 const prefix = ayarlar.prefix;
@@ -139,5 +140,79 @@ client.unload = command => {
   });
 };
 
+client.on("message", async message => {
+  try {
+    if (message.author.bot || !message.guild) return;
+
+    if (!db.get(`xp_${message.author.id}`)) {
+      db.set(`xp_${message.author.id}`, 0);
+      db.set(`level_${message.author.id}`, 0);
+    }
+
+    if (db.get(`xp_${message.author.id}`) >= "500") {
+      let xp1 = db.get(`xp_${message.author.id}`);
+      db.set(`xp_${message.author.id}`, +xp1 - 500);
+      db.add(`level_${message.author.id}`, 1);
+      let level1 = db.get(`level_${message.author.id}`);
+      message.channel
+        .send(
+          `${message.author} tebrikler seviye **${level1}** oldun! Seviyen hakkında detaylı bilgi için **!rank**.`
+        )
+        .catch(() => {});
+    }
+
+    const xp = db.get(`xp_${message.author.id}`);
+    const level = db.get(`level_${message.author.id}`);
+
+    if (message.content === "!rank") {
+      const image = await new DCanvas.RankCard()
+        .setAvatar(message.author.displayAvatarURL({ format: "png" }))
+        .setXP("current", +xp)
+        .setXP("needed", 500)
+        .setLevel(+level)
+        .setRankName(message.guild.name)
+        .setRank()
+        .setUsername(message.author.username)
+        .setBackground(
+          "https://cdn.discordapp.com/attachments/841372349433511976/844092026055295005/abstract-wallpaper-1557232187mc4.png"
+        )
+        .toAttachment();
+      const attachment = new Discord.MessageAttachment(
+        image.toBuffer(),
+        "rank-card.png"
+      );
+      message.channel.send(attachment).catch(() => {});
+    }
+
+    await db.add(`xp_${message.author.id}`, 3);
+  } catch (h) {
+    console.trace(h);
+  }
+});
+
+client.on("message", async msg => {
+  const gereksiz = await db.fetch(`saas_${msg.guild.id}`);
+  if (gereksiz === "aktif") {
+    if (
+      msg.content.toLowerCase() == "selam" ||
+      msg.content.toLowerCase() == "selamun aleyküm" ||
+      msg.content.toLowerCase() == "s.a" ||
+      msg.content.toLowerCase() == "sea" ||
+      msg.content.toLowerCase() == "sa" ||
+      msg.content.toLowerCase() == "selamm" ||
+      msg.content.toLowerCase() == "saa" ||
+      msg.content.toLowerCase() == "saaa"
+    )
+      return msg.reply("Aleyküm selam hoşgeldin nasılsın, İyimisin?");
+  } else if (gereksiz === "deaktif") {
+  }
+  if (!gereksiz) return;
+});
+
+client.on("ready", () => {
+  client.user.setActivity(
+    `!yardım | ${client.guilds.cache.size} Sunucu`
+  );
+})
 
 client.login(process.env.TOKEN);
