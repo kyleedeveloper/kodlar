@@ -1,40 +1,35 @@
 const ulashDiscord = require('discord.js');
 const ulashClient = new ulashDiscord.Client();
 const ayarlar = require('../ayarlar.json');
-let Prefix = ayarlar.prefix
+const Discord = require('discord.js');
 
-exports.run = (client, message) => {
- const ulashEmbed = new ulashDiscord.MessageEmbed()
-  .setColor(0xff000)
- .setAuthor(`${client.user.username} | Kylee Yardım Menüsü`)
- .setDescription(`
- **${Prefix}bilgilerim** \n-> Hesap Bilgisini Gösterir
- **${Prefix}bakiye** \n-> Bakiyeyi Gösterir
- **${Prefix}günlükpara** \n->  Günlük Para Ödülü Alırsın
- **${Prefix}hesap-oluştur** \n->  Hesap Oluşturursun
- **${Prefix}hesap-sil** \n->  Hesap Silersin
- **${Prefix}kasa-aç** \n->  Kasa Açarsın
-  **${Prefix}kasa-bilgi** \n->  Kasalar Hakkında Bilgi Alırsın
- **${Prefix}transfer** \n->  Belirtilen Kişiye Belirtilen Miktarda Para Gönderirsin
-  **${Prefix}kasaaç <Kasaid>** \n->  Belirtilen İD'ye Sahip Kasayı Açarsın
+exports.run = function(client, message) { // Beyefendi Kod Paylaşım
+const bikod = new Discord.MessageEmbed ()
+.setColor('#304FFE')
+.setTitle('yardım Komutları')
+.setTimestamp()
+.addField('!ekonomi','Ekonomi Komutlarına Bakarsın')
+.addField('!genel','Genel Komutlara Bakarsın')
+.addField('!müzik','Müzik Komutlarına Bakarsın')
+.addField("Botu Sunucuna Ekle", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=800091499475501086&permissions=8&scope=bot)")
+.addField("Botun Web Sitesi", "[TIKLA!](http://kylee.tk/)")
+.addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/NdNMzVhk65)")
+.setFooter('Kyle BOT')
+.setTimestamp()
+.setThumbnail(client.user.avatarURL)
+message.channel.send(bikod)
+};
 
 
-
-`)
- .setFooter(``)
- .setTimestamp()
- message.channel.send(ulashEmbed)
-}
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  kategori: "Bot",
   permLevel: 0
 };
 
 exports.help = {
   name: 'yardım',
-  description: 'Bot ile ilgili bilgi verir.',
-  usage: 'bilgi'
+  description: 'Tüm komutları gösterir.',
+  usage: 'yardım'
 };
