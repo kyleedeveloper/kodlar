@@ -12,6 +12,7 @@ exports.run = function(client, message) {
     .addField("!sil", "Yazdığınız Sayı Kadar Mesaj Siler")
     .addField("!sa-as aç/kapat", "sa-as Sistemini Açar/Kapatır")
     .addField("!uyar @kişi sebep", "Yazdığınız Kişiyi Uyarır")
+    .addField("!rozetlerim", "Rozetlerine Bakarsın")
     .addField(
       "!uyarı-sil @kişi sayı",
       "Yazdığınız Kişinin Yazdığınız Sayısı Kadar Uyarısını Siler"
