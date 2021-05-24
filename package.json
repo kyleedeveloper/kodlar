@@ -10,7 +10,7 @@
   "dependencies": {
     "array-sort": "^1.0.0",
     "brawlstars": "^1.2.4",
-    "canvas": "^2.7.0",
+    "canvas": "^2.8.0",
     "chalk": "^4.1.0",
     "cleverbot-node": "^0.3.11",
     "cleverbot.io": "^1.0.4",

@@ -215,4 +215,81 @@ client.on("ready", () => {
   );
 })
 
+client.on("guildMemberAdd", async member => {
+  const Discord = require('discord.js')
+  const Canvas = require('canvas')
+  const db = require('quick.db')
+
+   const canvas = Canvas.createCanvas(640, 360);
+  const rctx = canvas.getContext('2d');
+  const background = await Canvas.loadImage(`
+ https://cdn.discordapp.com/attachments/832252656205955113/832253724176547900/devhg.png`);
+
+ 
+  rctx.drawImage(background, 0, 0, canvas.width, canvas.height); 
+  rctx.font = '38px Sans-serif';
+    rctx.fillStyle = '#ffffff';
+    rctx.fillText(`${member.user.username}` , 200, 255);
+rctx.font = '36px Sans-serif';
+    rctx.fillStyle = '#ffffff';
+    rctx.fillText(`#${member.guild.memberCount}. Kişi!` , 15, 75);
+rctx.font = '35px Helvetica';
+    rctx.fillStyle = '#000000';
+    rctx.fillText(`Kylee` , 30, 30);
+            
+  rctx.beginPath()
+  rctx.arc(310, 125, 85, 0, Math.PI * 2, true)
+  rctx.closePath();
+  rctx.clip();
+
+  const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: "jpg" }))
+    rctx.drawImage(avatar, 210, 25, 200, 200);
+  
+  
+ const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'devilscode-hg.png');
+  const kanal = db.fetch(`devcanvas_${member.guild.id}`)
+  var rzm = member.guild.channels.cache.get(kanal)
+  if(!rzm) return;
+  rzm.send(attachment)
+})
+
+
+client.on("guildMemberRemove", async member => {
+  const Discord = require('discord.js')
+  const Canvas = require('canvas')
+  const db = require('quick.db')
+
+   const canvas = Canvas.createCanvas(640, 360);
+    const rctx = canvas.getContext('2d');
+  const background = await Canvas.loadImage(`
+ https://cdn.discordapp.com/attachments/832252656205955113/832253730296430592/devbb.png`);
+
+rctx.strokeStyle = "#f0f0f0";
+rctx.strokeRect(0, 0, canvas.width, canvas.height);
+  rctx.drawImage(background, 0, 0, canvas.width, canvas.height); 
+  rctx.font = '38px Sans-serif';
+    rctx.fillStyle = '#ffffff';
+    rctx.fillText(`${member.user.username}` , 200, 255);
+rctx.font = '32px Sans-serif';
+    rctx.fillStyle = '#ffffff';
+    rctx.fillText(`#${member.guild.memberCount} Kişi kaldık!` , 9, 75);
+rctx.font = '35px Helvetica';
+    rctx.fillStyle = '#000000';
+    rctx.fillText(`Kylee` , 30, 30);
+            
+  rctx.beginPath()
+  rctx.arc(310, 125, 85, 0, Math.PI * 2, true)
+  rctx.closePath();
+  rctx.clip();
+
+  const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: "jpg" }))
+    rctx.drawImage(avatar, 210, 25, 200, 200);
+  
+ const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'devilscode-bb.png');
+  const kanal = db.fetch(`devcanvas_${member.guild.id}`)
+  var rzm = member.guild.channels.cache.get(kanal)
+  if(!rzm) return;
+  rzm.send(attachment)
+})
+
 client.login(process.env.TOKEN);
