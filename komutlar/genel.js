@@ -20,12 +20,12 @@ exports.run = function(client, message) {
     .addField("!uyarı-ölç", "Yazdığınız Kişinin Kaç Uyarısı Olduğunu Ölçer")
     .addField(
       "Botu Sunucuna Ekle",
-      "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=800091499475501086&permissions=8&scope=bot)"
+      "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)"
     )
     .addField("Botun Web Sitesi", "[TIKLA!](https://kylee.tk/)")
     .addField(
       "Destek Sunucumuza Katıl",
-      "[TIKLA!](https://discord.gg/NdNMzVhk65)"
+      "[TIKLA!](https://discord.gg/FchgyE2sDM)"
     )
     .setTimestamp()
     .setThumbnail(client.user.avatarURL);

@@ -156,7 +156,7 @@ client.on("message", async message => {
       let level1 = db.get(`level_${message.author.id}`);
       message.channel
         .send(
-          `${message.author} tebrikler seviye **${level1}** oldun! Seviyen hakkında detaylı bilgi için **!rank**.`
+          `${message.author} tebrikler seviye **${level1}** oldun! Seviyen hakkında detaylı bilgi için **k!rank**.`
         )
         .catch(() => {});
     }
@@ -164,7 +164,7 @@ client.on("message", async message => {
     const xp = db.get(`xp_${message.author.id}`);
     const level = db.get(`level_${message.author.id}`);
 
-    if (message.content === "!rank") {
+    if (message.content === "k!rank") {
       const image = await new DCanvas.RankCard()
         .setAvatar(message.author.displayAvatarURL({ format: "png" }))
         .setXP("current", +xp)
@@ -211,7 +211,7 @@ client.on("message", async msg => {
 
 client.on("ready", () => {
   client.user.setActivity(
-    `!yardım | ${client.guilds.cache.size} Sunucu`
+    `k!yardım | ${client.guilds.cache.size} Sunucu`
   );
 })
 
