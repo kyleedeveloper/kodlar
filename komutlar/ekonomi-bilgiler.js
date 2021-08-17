@@ -40,10 +40,10 @@ exports.conf = {
     guildOnly: false,
     aliases: [],
     permLevel: 0,
-    katagori: "Ekonomi"
+    katagori: "Ekonsdsadasomi"
 }
 exports.help = {
-    name: 'bilgilerim',
+    name: 'bilgidsadaslerim',
     description: 'Asreaper',
     usage: 'Asreaper',
 }

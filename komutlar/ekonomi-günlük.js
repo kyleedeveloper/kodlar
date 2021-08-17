@@ -79,13 +79,13 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['günlük-para'],
+    aliases: ['günldsadsadsadük-para'],
     permLevel: 0,
     katagori: "Ekonomi"
 }
 
 exports.help = {
-    name: 'günlükpara',
+    name: 'günlüdsadsadakpara',
     description: 'Ulash Studio',
     usage: 'Ulash Studio'
 }

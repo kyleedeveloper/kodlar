@@ -66,13 +66,13 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['kasaaç'],
+    aliases: ['kassadsaaaç'],
     permLevel: 0,
-    katagori: "Ekonomi"
+    katagori: "Ekodasdsanomi"
 }
 
 exports.help = {
-    name: 'kasa-aç',
+    name: 'kasdsadsadsaa-aç',
     description: 'ulash',
     usage: 'ulash'
 }

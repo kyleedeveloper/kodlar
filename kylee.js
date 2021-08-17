@@ -45,14 +45,14 @@ require('./util/eventLoader')(client);
 //////////////////////////////////////////////
 client.ayarlar = {
 "durum":"dnd",//online , idle , dnd 
-"oynuyor":"",
+"oynuyor":"oyna.ytsworld.ml'nin koruması",
 "prefix":"!",
-"sahip":"722734396553297943",
+"sahip":"852588815927214181",
 }
 client.ekoayarlar = {
   parabirimi: "KY", //Para Birimi TL İsterseniz Dolar Euro Vb. Para Birimleri Girebilirsiniz.
   botunuzunprefixi: "!",
-  botunuzunidsi: "800091499475501086",
+  botunuzunidsi: "856820108815237130",
   botismi: "Kylee",
   renk: "BLUE", //İNGİLİZCE TERCİH ETTİĞİNİZ RENGİ YAZINIZ! EĞER BÖYLE BIRAKIRSANIZ RASTGELE ATAR!
   isimsiz: "Bilinmiyor", //İSİMSİZ KİŞİLERİN HANGİ İSİM İLE GÖZÜKECEĞİNİ BELİRLEYEBİLİRSİNİZ!
@@ -64,7 +64,7 @@ client.ekoayarlar = {
   dblkey: "KEY", //EĞER DBLOY U AKTİF ETMEDİYSENİZ BURAYA KEY EKLEMENİZE GEREK YOK EĞER AKTİF ETTİYSENİZ DBL SİTESİNDEN BULABİLİRSİNİZ!
   dblmsj: "Bu komutu kullanabilmek için bota oy vermelisiniz. Oy vermek için !oyver", //EĞER DBLOY U AKTİF ETMEDİYSENİZ BURAYA MESAJ YAZMANIZA GEREK YOK! EĞER AKTİF ETTİYSENİZ BOTA OY VERMEK İÇİN HANGİ MESAJI YAZACAĞINI AYARLAYABİLİRSİNİZ.
   başlangıçparası: 50, //EĞER RASTGELE PARAYI TRUE YAPTIYSANIZ BURAYI ELLEMENİZE GEREK YOK!
-  admin: ["664146094183284776"]//["id","",""]
+  admin: ["852588815927214181"]//["id","",""]
 }
 const kurulum = message => {
   console.log(`Kurulum: ${message}`);

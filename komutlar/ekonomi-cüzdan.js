@@ -77,7 +77,7 @@ exports.conf = {
   katagori: "Ekonomi"
 };
 exports.help = {
-  name: "bakiye",
+  name: "badsadsadsakiye",
   description: "Ulash Studio",
   usage: "Ulash Studio"
 };

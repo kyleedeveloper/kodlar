@@ -22,12 +22,12 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ['ekle'],
+    aliases: ['ekdsadsadale'],
     permLevel: 0
 }
 
 exports.help = {
-    name: 'ekle',
+    name: 'ekdsdsale',
     description: 'ulash',
     usage: 'ulash'
 }

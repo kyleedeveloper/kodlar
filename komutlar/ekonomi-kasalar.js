@@ -18,11 +18,11 @@ exports.conf = {
     guildOnly: false,
     aliases: [],
     permLevel: 0,
-    katagori: "Ekonomi"
+    katagori: "Ekondsadsadsaomi"
 }
 
 exports.help = {
-    name: 'kasalar',
+    name: 'kasdasdsadaalar',
     description: 'ulash',
     usage: 'ulash'
 }

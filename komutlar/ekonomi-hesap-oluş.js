@@ -53,12 +53,12 @@ if(!hesapismi) {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['hesap'],
+    aliases: ['hedsdsasap'],
     permLevel: 0,
     katagori: "Ekonomi"
 }
 exports.help = {
-    name: 'hesap-oluştur',
+    name: 'hesadsadsap-oluştur',
     description: 'ulash',
     usage: 'ulash',
 }

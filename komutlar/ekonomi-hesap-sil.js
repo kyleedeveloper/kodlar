@@ -22,12 +22,12 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ['sil'],
+    aliases: ['sidsadsal'],
     permLevel: 0
 }
 
 exports.help = {
-    name: 'hesap-sil',
+    name: 'hesdsdasdaap-sil',
     description: 'Ulash Studio',
     usage: 'Ulash Studio'
 }

@@ -49,12 +49,12 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['paragonder', 'paragönder', 'para-gonder', 'para-gönder'],
+    aliases: ['paragodsadsadander', 'paragdsadsadasönder', 'pardsadsaa-gonder', 'para-gönsadsadsadader'],
     permLevel: 0,
     katagori: "Ekonomi"
 }
 exports.help = {
-    name: 'transfer',
+    name: 'transfdsadsadsaer',
     description: 'ulash',
     usage: 'ulash',
 }
