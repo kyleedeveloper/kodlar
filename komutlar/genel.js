@@ -12,21 +12,13 @@ exports.run = function(client, message) {
     .addField("!sil", "Yazdığınız Sayı Kadar Mesaj Siler")
     .addField("!sa-as aç/kapat", "sa-as Sistemini Açar/Kapatır")
     .addField("!uyar @kişi sebep", "Yazdığınız Kişiyi Uyarır")
-    .addField("!rozetlerim", "Rozetlerine Bakarsın")
-    .addField(
-      "!uyarı-sil @kişi sayı",
-      "Yazdığınız Kişinin Yazdığınız Sayısı Kadar Uyarısını Siler"
-    )
+    .addField('!öneri','bota veya herhangi birşeyi önerirsiniz')
+    .addField('!kullanıcı-bilgi @kişi ','etiketlediğiniz kişinin bilgilerine bakarsınız')
+    .addField( "!uyarı-sil @kişi sayı","Yazdığınız Kişinin Yazdığınız Sayısı Kadar Uyarısını Siler")
     .addField("!uyarı-ölç", "Yazdığınız Kişinin Kaç Uyarısı Olduğunu Ölçer")
-    .addField(
-      "Botu Sunucuna Ekle",
-      "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)"
-    )
+    .addField("Botu Sunucuna Ekle", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)")
     .addField("Botun Web Sitesi", "[TIKLA!](https://kylee.tk/)")
-    .addField(
-      "Destek Sunucumuza Katıl",
-      "[TIKLA!](https://discord.gg/FchgyE2sDM)"
-    )
+    .addField("Destek Sunucumuza Katıl","[TIKLA!](https://discord.gg/FchgyE2sDM)")
     .setTimestamp()
     .setThumbnail(client.user.avatarURL);
   message.channel.send(bikod);
