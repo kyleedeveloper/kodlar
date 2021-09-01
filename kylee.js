@@ -297,11 +297,11 @@ client.on('message', async msg => {
 const embed = new Discord.MessageEmbed()
 .setAuthor(`Selam Ben Kylee`, `https://cdn.discordapp.com/attachments/844998840347918426/846436682912104458/6.jpg`)
 .setDescription('PREFIXIM !')
-.addField("Botu Sunucuna Ekle", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=800091499475501086&permissions=8&scope=bot)")
+.addField("Botu Sunucuna Ekle", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)")
 .addField("Botun Web Sitesi", "[TIKLA!](https://kylee.tk/)")
-.addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/NdNMzVhk65)")
+.addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/6myc7NDHhs)")
 .setColor('RANDOM')
-  if(msg.content == `<@!800091499475501086>`) return msg.channel.send(embed); //botunuzun idsi
+  if(msg.content == `<@!856820108815237130>`) return msg.channel.send(embed); //botunuzun idsi
 });
 
 client.on("message", async message => {

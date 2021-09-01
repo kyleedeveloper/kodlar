@@ -5,7 +5,7 @@ exports.run = (client, message, params) => {
     .setAuthor("Selam Ben Kylee! Prefixim: !")
    .addField("Botu Sunucuna Ekle", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)")
    .addField("Botun Web Sitesi", "[TIKLA!](https://kylee.tk/)")
-   .addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/FchgyE2sDM)")
+   .addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/6myc7NDHhs")
 
     .setColor("RANDOM") 
   .setThumbnail(message.author.avatarURL())

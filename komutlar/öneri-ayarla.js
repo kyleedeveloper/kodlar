@@ -16,7 +16,7 @@ if (args[0] == "sıfırla") {
   return message.channel.send("**Lütfen bir kanal etiketleyiniz.**")
 } else {
   db.set(`önerikanal_${message.guild.id}`, kanal.id)
-  return message.channel.send(`**Önerilerin gönderileceği başarıyla ${kanal} olarak ayarlandı.** \n \`\`Sıfırlamak için !!öneri-ayarla sıfırla\`\` `)
+  return message.channel.send(`**Önerilerin gönderileceği başarıyla ${kanal} olarak ayarlandı.** \n \`\`Sıfırlamak için !öneri-ayarla sıfırla\`\` `)
 }
 
  } 

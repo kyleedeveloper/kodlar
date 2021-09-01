@@ -15,7 +15,7 @@ var oneri = args.join(" ").slice(0)
 
 if (!oneri) {
 
-    message.channel.send("**Hey Dostum Yanlış Kullanıyorsun. Merak Etme Ben Burdayım** \n`Örnek: !öneri Egehanssa Oy Vermeyen Banlansın`")
+    message.channel.send("**Hey Dostum Yanlış Kullanıyorsun. Merak Etme Ben Burdayım** \n`Örnek: !öneri ytsisland adamdır`")
 
   
 
@@ -37,7 +37,7 @@ if (!oneri) {
 
 .setThumbnail(client.user.displayAvatarURL()) 
 
-.setFooter(`ytsisland. ©`)
+.setFooter(`ytsisland.batihost.net ©`)
 
     
 
