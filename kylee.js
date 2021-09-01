@@ -304,4 +304,46 @@ const embed = new Discord.MessageEmbed()
   if(msg.content == `<@!800091499475501086>`) return msg.channel.send(embed); //botunuzun idsi
 });
 
+client.on("message", async message => {
+    if(message.author.bot) return;
+    
+    let i = await db.fetch(`reklamFiltre_${message.guild.id}`)  
+          if (i == 'acik') {
+              const reklam = ["https://","http://","discord.gg",
+      "discord.gg",
+      ".com",
+      ".net",
+      ".xyz",
+      ".tk",
+      ".pw",
+      ".io",
+      ".me",
+      ".gg",
+      "www.",
+      "https",
+      "http",
+      ".gl",
+      ".org",
+      ".com.tr",
+      ".biz",
+      ".party",
+      ".rf.gd",
+      ".az",
+      "sunucuma gelin",
+      "sunucum var"]
+      
+              if (reklam.some(word => message.content.toLowerCase().includes(word))) {
+                try {
+                  if (!message.member.hasPermission("MANAGE_GUILD")) {
+                    message.delete();                                       
+                    return message.channel.send(`<@${message.author.id}> Reklam Yapmak Yasak!`).then(message => message.delete(10000));
+                  }              
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+          }
+          if (!i) return;
+          }); 
+
 client.login(process.env.TOKEN);
