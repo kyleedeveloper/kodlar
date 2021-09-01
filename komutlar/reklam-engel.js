@@ -11,8 +11,8 @@ if (!message.guild) {
     return message.author.send(ozelmesajuyari); }
   
   if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(` Bu komudu kullanabilmek için \`Sunucuyu Yönet\` yetkisine sahip olman gerek.`)
-  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-reklam aç\` | Kapatmak İstiyorsanız \`-reklam kapat\` Yazabilirsiniz`)
-  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-reklam aç\` | Kapatmak İstiyorsanız \`-reklam kapat\` Yazabilirsiniz`)
+  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`!reklam aç\` | Kapatmak İstiyorsanız \`!reklam kapat\` Yazabilirsiniz`)
+  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`!reklam aç\` | Kapatmak İstiyorsanız \`!reklam kapat\` Yazabilirsiniz`)
 
     if (args[0] == 'aç') {
     db.set(`reklamFiltre_${message.guild.id}`, 'acik')
@@ -45,5 +45,5 @@ exports.conf = {
 exports.help = {
  name: 'reklam-engel',
  description: 'reklamm',
- usage: '-kanal'
+ usage: '!kanal'
 };

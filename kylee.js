@@ -357,4 +357,14 @@ msg.channel.send("Kanala Sadece Resim/Fotoğraf Gönderebilirsin!").then(x => x.
   }
 });
 
+client.on("guildCreate", async guild => {
+  guild.owner.send("beni sunucuna eklediğin için teşekürler!!");
+  guild.owner.send("bu destek sunucusuna detaylı bilgi almak için gel sunucu linki için", "[TIKLA!](hhttps://discord.gg/6myc7NDHhs)");
+});
+
+client.on("guildDelete", async guild => {
+  guild.owner.send("Bot Sunucudan Atıldı!!!");
+    guild.owner.send("sen atmadıysan veya geri eklemek istersen bot linki için", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)");
+});
+
 client.login(process.env.TOKEN);
