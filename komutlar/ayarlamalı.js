@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 exports.run = function(client, message) { // Beyefendi Kod Paylaşım
 const bikod = new Discord.MessageEmbed ()
 .setColor('#304FFE')
-.setTitle('yardım Komutları')
+.setTitle('ayarlamalı Komutlar')
 .setTimestamp()
 .addField('!sa-as aç/kapat','sa-as Sistemini Açar sanız sa deyince as der / Kapat deyince sa deyince as demez')
 .addField('!giriş-çıkış ayarla #kanal','Ayarlanılınca o Sunucuya Birisi Girdiğinde veya Çıktığında Mesaj Gönderir')
@@ -30,7 +30,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'yardım',
+  name: 'ayarlamalı',
   description: 'Tüm komutları gösterir.',
-  usage: 'yardım'
+  usage: 'ayarlamalı'
 };

@@ -347,7 +347,7 @@ client.on("message", async message => {
           }); 
 
 client.on("message", async msg => {
-  if (msg.channel.id !== "876171482118623322") { //buraya o kanalın ID'si yazılacak.
+  if (msg.channel.id !== "876171487906779216") { //buraya o kanalın ID'si yazılacak.
     return;
   }
   if (msg.author.id === msg.guild.ownerID) return;
