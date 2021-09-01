@@ -4482,7 +4482,7 @@ specifiers:
   express: ^4.17.1
   ffmpeg: ^0.0.4
   ffmpeg-binaries: ^4.0.0
-  fs: 0.0.2
+  fs: ^0.0.2
   g-image-search: ^1.0.2
   gamedig: ^2.0.23
   gitinfo: ^2.4.0
