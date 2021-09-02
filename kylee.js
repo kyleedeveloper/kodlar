@@ -408,4 +408,5 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     }
     if (!i) return;
 });
+
 client.login(process.env.TOKEN);
