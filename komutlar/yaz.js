@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 //Kylee
 exports.run = (client, message, args) => {
-    let mesaj = args.slice(0).join(' ');
+    let mesaj = args.join(' ')
     if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazmalısın.');
     message.delete();
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
     .setColor(0xD97634)
     .setDescription(`**${mesaj}**`)
-    return message.channel.sendEmbed(embed);
+    return message.channel.send(embed);
 }; //Kylee
 
 exports.conf = {
