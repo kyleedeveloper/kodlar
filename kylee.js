@@ -367,4 +367,27 @@ client.on("guildDelete", async guild => {
     guild.owner.send("sen atmadıysan veya geri eklemek istersen bot linki için", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)");
 });
 
+client.on("messageUpdate", msg => {
+  const i = db.fetch(`${msg.guild.id}.motion`);
+  if (i) {
+ const motion = [      "oç",      "amk",      "ananı sikiyim",      "piç",      "orospu çocuğu",      "orospu",      "kahbe",      "kahpe",      "ebeni sikim",      "anneni sikeyim",      "göt",      "o.ç",      "annen", "am", "31", "napim",];
+    if (motion.some(motion => msg.content.includes(motion))) {
+      try {
+        if (!msg.member.hasPermission("BAN_MEMBERS")) {
+          msg.delete();
+
+          return msg
+            .reply(
+              `${msg.author.tag}, **Hey Dostum Bu Sunucuda Küfür Söylemek Yasak!** :YanpSnennleGif:`
+            )
+            .then(msg => msg.delete(3000));
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+}
+  if (!i) return;
+});
+
 client.login(process.env.TOKEN);
