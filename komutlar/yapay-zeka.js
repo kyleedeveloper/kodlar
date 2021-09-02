@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const data = require('quick.db')
 const db = require("quick.db") 
-const ayarlar = require("../ayarlar.js")
+const ayarlar = require("../ayarlar.json")
 
 exports.run = async (client, message, args) => {
   
@@ -12,7 +12,7 @@ Discord.MessageEmbed()
 
 .setAuthor(`${client.user.username}`,client.user.displayAvatarURL({dynamic: true, format: "png"}))
 .setColor(ayarlar.color)
-.setDescription(`Birşey belirtsene aç veya kapat*`))
+.setDescription(`Birşey belirt aç veya kapat*`))
 
 if(args[0] == "aç") {
       let sayac2 = db.fetch(`yapayzeka_${message.guild.id}`)
