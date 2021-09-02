@@ -360,4 +360,21 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     if (!i) return;
 });
 
+client.on("message", async message => {
+  const db = require("quick.db");
+  const ai = require("@codare/codare.ai");
+  let kanal = db.fetch(`yapayzekakanal_${message.guild.id}`);
+  if (!kanal) return;
+  if (message.channel.id !== kanal) return;
+  if (message.author.bot == true) return;
+  let soru = message.content;
+  message.channel.startTyping();
+  ai.sor(soru).then(rysus => {
+    setTimeout(function() {
+      return message.inlineReply(rysus);
+    }, 1000);
+    message.channel.stopTyping();
+  });
+});
+
 client.login(process.env.TOKEN);
