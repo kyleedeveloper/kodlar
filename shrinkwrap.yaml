@@ -1,4 +1,5 @@
 dependencies:
+  '@codare/codare.ai': 1.0.2
   array-sort: 1.0.0
   brawlstars: 1.2.4
   canvacord: 5.2.3
@@ -6,6 +7,7 @@ dependencies:
   chalk: 4.1.0
   cleverbot-node: 0.3.11
   cleverbot.io: 1.0.4
+  codare.ai: 1.0.1
   colors: 1.4.0
   common-tags: 1.8.0
   dblapi.js: 2.4.1
@@ -60,6 +62,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Lb3xatdd91MR9tU4sicgrxxKg+/rVD1zKTOh55bmVF2Ri5X8vHTV+jNHTvRzkomGpyepGM+7qA4xMvG8ZqtO8g==
+  /@codare/codare.ai/1.0.2:
+    dependencies:
+      node-fetch: 2.6.1
+    dev: false
+    resolution:
+      integrity: sha512-3d7145SiEA+eV7UCGNJ45NH069qbq8ZaHsDn6RkIv0nnbc1IQtCPdid0CdMrJAWAwiKw2fH4O7RuNZmEx8aSWw==
   /@discordjs/collection/0.1.6:
     dev: false
     resolution:
@@ -1069,6 +1077,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-0dyXOSAxTfZ/vrlCI7TuNQI56Ws=
+  /codare.ai/1.0.1:
+    dependencies:
+      node-fetch: 2.6.1
+    dev: false
+    resolution:
+      integrity: sha512-GZBuD9mWm0TY8Cv5cPUmChUlf30GSJm7mnH7DWMa4qT8mdvf3ugBdmnQmtHxKU3eAjH8BftgN0ChCa464Ec3JA==
   /code-point-at/1.1.0:
     dev: false
     engines:
@@ -4496,6 +4510,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@codare/codare.ai': ^1.0.1
   array-sort: ^1.0.0
   brawlstars: ^1.2.4
   canvacord: ^5.2.3
@@ -4503,6 +4518,7 @@ specifiers:
   chalk: ^4.1.0
   cleverbot-node: ^0.3.11
   cleverbot.io: ^1.0.4
+  codare.ai: ^1.0.0
   colors: ^1.4.0
   common-tags: ^1.8.0
   dblapi.js: ^2.4.1
