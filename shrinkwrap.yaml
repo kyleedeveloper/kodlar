@@ -1,6 +1,7 @@
 dependencies:
   array-sort: 1.0.0
   brawlstars: 1.2.4
+  canvacord: 5.2.3
   canvas: 2.8.0
   chalk: 4.1.0
   cleverbot-node: 0.3.11
@@ -49,6 +50,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
+  /@canvacord/assets/2.0.5:
+    dev: false
+    resolution:
+      integrity: sha512-MceWZe5TzOymfvgf8ZU5m1oxWg6rGyH5anCgANARa47+CjVcppe6+Bd1+36pXiDTOyE4uRJk6T5RgOEJOgciug==
+  /@canvacord/emoji-parser/1.0.1:
+    dependencies:
+      twemoji-parser: 13.1.0
+    dev: false
+    resolution:
+      integrity: sha512-Lb3xatdd91MR9tU4sicgrxxKg+/rVD1zKTOh55bmVF2Ri5X8vHTV+jNHTvRzkomGpyepGM+7qA4xMvG8ZqtO8g==
   /@discordjs/collection/0.1.6:
     dev: false
     resolution:
@@ -945,6 +956,17 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
+  /canvacord/5.2.3:
+    dependencies:
+      '@canvacord/assets': 2.0.5
+      '@canvacord/emoji-parser': 1.0.1
+      canvas: 2.8.0
+      gifencoder: 2.0.1
+      moment: 2.29.1
+      moment-duration-format: 2.3.2
+    dev: false
+    resolution:
+      integrity: sha512-aYxGA7tVQi3NCa7Qxg2b9u+wAeek2xE5q+nJjiReZofeUx0d1Xq731UerKf+iVIPBrCAcjbv/yflJL0qVwPuMQ==
   /canvas/2.8.0:
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.5
@@ -2016,6 +2038,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
+  /gifencoder/2.0.1:
+    dependencies:
+      canvas: 2.8.0
+    dev: false
+    resolution:
+      integrity: sha512-x19DcyWY10SkshBpokqFOo/HBht9GB75evRYvaLMbez9p+yB/o+kt0fK9AwW59nFiAMs2UUQsjv1lX/hvu9Ong==
   /gifwrap/0.9.2:
     dependencies:
       image-q: 1.1.1
@@ -4191,6 +4219,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
+  /twemoji-parser/13.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-AQOzLJpYlpWMy8n+0ATyKKZzWlZBJN+G0C+5lhX7Ftc2PeEVdUU/7ns2Pn2vVje26AIZ/OHwFoUbdv6YYD/wGg==
   /type-fest/0.16.0:
     dev: false
     engines:
@@ -4466,6 +4498,7 @@ shrinkwrapVersion: 3
 specifiers:
   array-sort: ^1.0.0
   brawlstars: ^1.2.4
+  canvacord: ^5.2.3
   canvas: ^2.8.0
   chalk: ^4.1.0
   cleverbot-node: ^0.3.11
