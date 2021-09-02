@@ -367,27 +367,45 @@ client.on("guildDelete", async guild => {
     guild.owner.send("sen atmadıysan veya geri eklemek istersen bot linki için", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)");
 });
 
-client.on("messageUpdate", msg => {
-  const i = db.fetch(`${msg.guild.id}.motion`);
-  if (i) {
- const motion = [      "oç",      "amk",      "ananı sikiyim",      "piç",      "orospu çocuğu",      "orospu",      "kahbe",      "kahpe",      "ebeni sikim",      "anneni sikeyim",      "göt",      "o.ç",      "annen", "am", "31", "napim",];
-    if (motion.some(motion => msg.content.includes(motion))) {
-      try {
-        if (!msg.member.hasPermission("BAN_MEMBERS")) {
-          msg.delete();
-
-          return msg
-            .reply(
-              `${msg.author.tag}, **Hey Dostum Bu Sunucuda Küfür Söylemek Yasak!** :YanpSnennleGif:`
-            )
-            .then(msg => msg.delete(3000));
+client.on("message", async msg => {
+ 
+ 
+ const i = await db.fetch(`kufur_${msg.guild.id}`)
+    if (i == "acik") {
+        const kufur = ["oç","sik","orospi","am","göt","sik","meme","orospu","orrospu çocuğu","orrospu","31","napim","domal","anan","taşşak","salak"];
+        if (kufur.some(word => msg.content.includes(word))) {
+          try {
+            if (!msg.member.hasPermission("BAN_MEMBERS")) {
+                  msg.delete();
+                          
+                      return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.')
+            }             
+          } catch(err) {
+            console.log(err);
+          }
         }
-      } catch (err) {
-        console.log(err);
-      }
     }
-}
-  if (!i) return;
+    if (!i) return;
 });
 
+client.on("messageUpdate", (oldMessage, newMessage) => {
+ 
+ 
+ const i = db.fetch(`${oldMessage.guild.id}.kufur`)
+    if (i) {
+        const kufur = ["küfürler","küfürler","küfürler",];
+        if (kufur.some(word => newMessage.content.includes(word))) {
+          try {
+            if (!oldMessage.member.hasPermission("BAN_MEMBERS")) {
+                  oldMessage.delete();
+                          
+                      return oldMessage.reply('Bu Sunucuda Küfür Filtresi Aktiftir.')
+            }             
+          } catch(err) {
+            console.log(err);
+          }
+        }
+    }
+    if (!i) return;
+});
 client.login(process.env.TOKEN);
