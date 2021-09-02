@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-//Dcs Ekibi
+//Kylee
 exports.run = (client, message, args) => {
     let mesaj = args.slice(0).join(' ');
     if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazmalısın.');
@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     .setColor(0xD97634)
     .setDescription(`**${mesaj}**`)
     return message.channel.sendEmbed(embed);
-}; //Dcs Ekibi
+}; //Kylee
 
 exports.conf = {
   enabled: true,
@@ -19,5 +19,5 @@ exports.conf = {
 
 exports.help = {
   name: 'yaz'
-  //Dcs Ekibi
+  //Kylee
 };

@@ -299,7 +299,7 @@ const embed = new Discord.MessageEmbed()
 .setDescription('PREFIXIM !')
 .addField("Botu Sunucuna Ekle", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)")
 .addField("Botun Web Sitesi", "[TIKLA!](https://kylee.tk/)")
-.addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/6myc7NDHhs)")
+.addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/yYVhnh7Wfa)")
 .setColor('RANDOM')
   if(msg.content == `<@!856820108815237130>`) return msg.channel.send(embed); //botunuzun idsi
 });
