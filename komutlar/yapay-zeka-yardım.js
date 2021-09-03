@@ -27,7 +27,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'mod',
+  name: 'yapay-zeka',
   description: 'Tüm komutları gösterir.',
-  usage: 'mod'
+  usage: 'yapay-zeka'
 };

@@ -11,24 +11,24 @@ Discord.MessageEmbed()
 
 .setAuthor(`${client.user.username}`,client.user.displayAvatarURL({dynamic: true, format: "png"}))
 
-.setDescription(`Birşey belirt *aç/kapat*`))
+.setDescription(` `))
 
 if(args[0] == "aç") {
       let sayac2 = db.fetch(`yapayzeka_${message.guild.id}`)
-    if(sayac2) return message.channel.send(new Discord.MessageEmbed() .setDescription(`sistem zaten kapalı`))
+    if(sayac2) return message.channel.send(new Discord.MessageEmbed() .setDescription(`sistem zaten açık`))
 let engin = message.mentions.channels.first()
 if(!engin) return message.inlineReply(`kanal belirtsene amk`)
 db.set(`yapayzekakanal_${message.guild.id}`, engin.id)
 db.set(`yapayzeka_${message.guild.id}`, 'aktif')
-return message.inlineReply(`sistem açıldı afrm`)
+return message.inlineReply(`sistem açıldı!`)
 };
 
 if(args[0] == "kapat") {
       let sayac2 = db.fetch(`yapayzeka_${message.guild.id}`)
-    if(sayac2) return message.channel.send(new Discord.MessageEmbed() .setDescription(`sistem zaten açık`))
+    if(sayac2) return message.channel.send(new Discord.MessageEmbed() .setDescription(`sistem zaten kapalı`))
 db.delete(`yapayzekakanal_${message.guild.id}`)
 db.delete(`yapayzeka_${message.guild.id}`)
-return message.inlineReply(`sistem kapandı`)
+return message.inlineReply(`sistem kapandı!`)
 }; 
 
 };
