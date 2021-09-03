@@ -17,12 +17,13 @@ exports.run = async (client, message, args) => {//hamzamertakbaba#3361
         const embed = new Discord.MessageEmbed()
             .setColor("GREEN")
             .setAuthor(args[0])
-            .addField(`Sunucu IP Adresi`, Data.hostname, true)
-            .addField(`Ping`, Data.ping, true)
-            .addField(`Oyuncu Sayısı`, `${Data.players}/${Data.max_players}`, true)
-            .addField(`Versiyon`, Data.version, true)
-            .setImage(`http://status.mclive.eu/CodAre.fun/${args[0]}/25565/banner.png`)
-            .setFooter("hamzamertakbaba tarafından ♥ ile yapıldı.");
+            .addField(`:satellite_orbital: Sunucu IP Adresi`, Data.hostname, true)
+            .addField(`:ping_pong: Ping`, Data.ping, true)
+            .addField(`:dolls: Oyuncu Sayısı`, `${Data.players}/${Data.max_players}`, true)
+            .addField(`:level_slider: Versiyon`, Data.version, true)
+            .addField(`:level_slider: Port`, Data.port, true)
+            .setImage(`http://status.mclive.eu/kyleebot/${args[0]}/25565/banner.png`)
+            .setFooter("Kylee BOT");
         message.channel.send(embed)
     }
 
@@ -34,5 +35,5 @@ exports.conf = {// codare ♥
     permLevel: 0
 };
 exports.help = {// codare ♥
-    name: 'minecraft-sunucu-bilgi',
+    name: 'mc',
 };
