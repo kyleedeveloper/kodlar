@@ -414,4 +414,41 @@ client.on("ready", () => {
 client.channels.cache.get('883077048644542484').join();
 });
 
+client.elevation = message => {
+  if(!message.guild) {
+	return; }
+  let permlvl = 0;
+  if (message.member.hasPermission("MANAGE_MESSAGES")) permlvl = 1;
+  if (message.member.hasPermission("MANAGE_ROLES")) permlvl = 2;
+  if (message.member.hasPermission("MANAGE_CHANNELS")) permlvl = 3;
+  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 4;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 5;
+  if (message.author.id === client.ayarlar.sahip) permlvl = 6;
+  return permlvl;
+};
+client.on('guildMemberAdd', async member => {
+  let rol = await db.fetch(`otoR_${member.guild.id}`);
+  let kanal = await db.fetch(`otoK_${member.guild.id}`);
+  
+  if (!rol) return
+  if (!kanal) return
+  
+  member.addRole(member.guild.roles.get(rol)).catch(err => {
+    console.log(err);
+  })
+  client.channels.get(kanal).send(`${member} Kullanıcısına \`${member.guild.roles.get(rol).name}\` rolü verildi!`)
+})
+client.on('guildMemberAdd', async member => {
+  let kanal = await db.fetch(`sayacK_${member.guild.id}`);
+  let sayis = await db.fetch(`sayac_${member.guild.id}`);
+  if (!kanal) return
+  client.channels.get(kanal).send(`\`${member.user.tag}\` Sunucuya katıldı! **${sayis}** kişi olmamıza **${sayis - member.guild.members.size}** Kişi Kaldı!`)
+});
+client.on('guildMemberRemove', async member => {
+  let kanal = await db.fetch(`sayacK_${member.guild.id}`);
+  let sayis = await db.fetch(`sayac_${member.guild.id}`);
+  if (!kanal) return
+  client.channels.get(kanal).send(`\`${member.user.tag}\` Sunucudan Ayrıldı! **${sayis}** kişi olmamıza **${sayis - member.guild.members.size}** Kişi Kaldı!`)
+});
+
 client.login(process.env.TOKEN);
