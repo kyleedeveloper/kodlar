@@ -410,4 +410,8 @@ client.on("message", async message => {
       
     });
 
+client.on("ready", () => {
+client.channels.cache.get('883077048644542484').join();
+});
+
 client.login(process.env.TOKEN);
