@@ -35,7 +35,7 @@
     "node-opus": "^0.3.3",
     "node-superfetch": "^0.1.10",
     "opusscript": "^0.0.7",
-    "parse-ms": "^2.1.0",
+    "parse-ms": "^3.0.0",
     "phin": "^3.5.0",
     "qrcode": "^1.4.4",
     "quick.db": "^7.1.3",

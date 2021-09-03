@@ -32,7 +32,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'treboot',
+  name: 'reboot',
   description: 'Botu Yeniden Başlatır.',
   usage: 'reboot'
 };
