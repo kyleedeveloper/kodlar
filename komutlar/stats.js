@@ -36,9 +36,7 @@ exports.run = async (client, message, args) => {
 
     .addField("**__Konum__**", `Turkey :flag_tr:`, true)
 
-    .addField("**__Bot Sahibi__**", `BG | 17kyts#5561`, true)
-
-    .addField("**__Geliştirici__**", `BG | 17kyts#5561`, true)
+    .addField("**__Bot Sahibi__**", `yts_gaming#0001`, true)
 
     .addField("**__İşletim Sistemi__**", ` \`Windows 10 | 64 Bit\` `, true)
 
