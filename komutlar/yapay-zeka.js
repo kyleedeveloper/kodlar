@@ -14,8 +14,6 @@ Discord.MessageEmbed()
 .setDescription(` `))
 
 if(args[0] == "aç") {
-      let sayac2 = db.fetch(`yapayzeka_${message.guild.id}`)
-    if(sayac2) return message.channel.send(new Discord.MessageEmbed() .setDescription(`sistem zaten açık`))
 let engin = message.mentions.channels.first()
 if(!engin) return message.inlineReply(`kanal belirtsene amk`)
 db.set(`yapayzekakanal_${message.guild.id}`, engin.id)
@@ -24,8 +22,6 @@ return message.inlineReply(`sistem açıldı!`)
 };
 
 if(args[0] == "kapat") {
-      let sayac2 = db.fetch(`yapayzeka_${message.guild.id}`)
-    if(sayac2) return message.channel.send(new Discord.MessageEmbed() .setDescription(`sistem zaten kapalı`))
 db.delete(`yapayzekakanal_${message.guild.id}`)
 db.delete(`yapayzeka_${message.guild.id}`)
 return message.inlineReply(`sistem kapandı!`)
