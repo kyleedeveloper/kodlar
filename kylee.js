@@ -310,7 +310,7 @@ msg.channel.send("Kanala Sadece Resim/Fotoğraf Gönderebilirsin!").then(x => x.
 
 client.on("guildCreate", async guild => {
   guild.owner.send("beni sunucuna eklediğin için teşekürler!!");
-  guild.owner.send("bu destek sunucusuna detaylı bilgi almak için gel sunucu linki için", "[TIKLA!](hhttps://discord.gg/6myc7NDHhs)");
+  guild.owner.send("bu destek sunucusuna detaylı bilgi almak için gel sunucu linki için", "[TIKLA!](https://discord.gg/6myc7NDHhs)");
 });
 
 client.on("guildDelete", async guild => {
