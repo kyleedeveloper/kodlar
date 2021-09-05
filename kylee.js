@@ -424,4 +424,31 @@ client.on('guildMemberRemove', async member => {
   client.channels.get(kanal).send(`\`${member.user.tag}\` Sunucudan Ayrıldı! **${sayis}** kişi olmamıza **${sayis - member.guild.members.size}** Kişi Kaldı!`)
 });
 
+// Pâyidar Code - Pâyidar
+
+client.on('guildMemberAdd', member => {
+  let sistem = db.fetch(`otorol_${member.guild.id}`)
+
+  // Eğer Sistem Açıksa Kod Döndürelim
+  if(sistem === 'acik'){
+    // Data Veri Çekme İşlemi
+    let rol = db.fetch(`orol_${member.guild.id}`)
+    let kanal = db.fetch(`okanal_${member.guild.id}`)
+    let mesaj = db.fetch(`omesaj_${member.guild.id}`)
+
+    // Rol Verme
+    member.roles.add(rol)
+
+    // Mesaj
+    client.channels.cache.get(kanal).send(
+      new Discord.MessageEmbed()
+      .setDescription(`${mesaj}`)
+      .setColor('BLACK')
+    )
+  } else if(sistem != "acik") {
+    // Eğer Sistem Kapalıysa...
+    return;
+  }
+})
+
 client.login(process.env.TOKEN);
