@@ -297,17 +297,6 @@ client.on("message", async message => {
           if (!i) return;
           }); 
 
-client.on("message", async msg => {
-  if (msg.channel.id !== "876171487906779216") { //buraya o kanalın ID'si yazılacak.
-    return;
-  }
-  if (msg.author.id === msg.guild.ownerID) return;
-  if (msg.attachments.size < 1) {
-    msg.delete();
-msg.channel.send("Kanala Sadece Resim/Fotoğraf Gönderebilirsin!").then(x => x.delete({timeout: 5000}));
-  }
-});
-
 client.on("guildCreate", async guild => {
   guild.owner.send("beni sunucuna eklediğin için teşekürler!!");
   guild.owner.send("bu destek sunucusuna detaylı bilgi almak için gel sunucu linki için", "[TIKLA!](https://discord.gg/6myc7NDHhs)");
