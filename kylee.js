@@ -452,6 +452,99 @@ client.on('guildMemberAdd', member => {
 })
 
 
+client.on('guildMemberAdd', async member => {
+  const database = require('quick.db');
+  const guild = member.guild;
+  const user = member.user;
+  
+  if(database.fetch(`kayıt-kayıtsız.${guild.id}`)) {
+    if(!guild.roles.cache.get(database.fetch(`kayıt-kayıtsız.${guild.id}`)) || member.roles.cache.has(database.fetch(`kayıt-kayıtsız.${guild.id}`))) return;
+    const kadınData = database.fetch(`kayıt-kadın.${guild.id}`);
+    if(!kadınData) return;
+    const kadın = guild.roles.cache.get(kadınData);
+    const erkekData = database.fetch(`kayıt-erkek.${guild.id}`);
+    if(!erkekData) return;
+    const erkek = guild.roles.cache.get(erkekData);
 
+    member.roles.add(database.fetch(`kayıt-kayıtsız.${guild.id}`));
+    member.setNickname('İsiminizi Yazın');
+
+    const kayıtkanal = guild.channels.cache.get(await database.fetch(`kayıt-kanal.${guild.id}`));
+    if(!kayıtkanal) return;
+
+    if(database.fetch(`k.${guild.id}.${user.id}`)) {
+      member.roles.remove(database.fetch(`kayıt-kayıtsız.${guild.id}`));
+      const data = await database.fetch(`k.${guild.id}.${user.id}`);
+      if(data.sex == 'K') {
+        member.roles.add(kadın.id);
+      } else {
+        member.roles.add(erkek.id);
+      };
+
+      member.setNickname(`${database.fetch(`kayıt-tag.${guild.id}`) ? `${database.fetch(`kayıt-tag.${guild.id}`)} ` : ''}${data.name} | ${data.yaş}`);
+      return kayıtkanal.send(`Kayıt başarıyla tamamlandı. **Otomatik** olarak kayıt edildin. İyi eğlenceler **${data.name}**`);
+
+    };
+
+    var ç = false;
+    var s = false;
+
+    const embed = new Discord.MessageEmbed()
+    .setColor('RANDOM')
+    .setImage('https://images-ext-1.discordapp.net/external/u4K5o1w8mfZ4ejvgLgIgd928hGr3vjQOi4hcbEtM1cc/https/media.discordapp.net/attachments/724722014283104306/727861420162809876/cortexKaytOlmak.gif')
+    kayıtkanal.send(`<@${member.user.id}> lütfen **ismini yaz** ve hemen kayıt işlemin bitsin.`);
+    kayıtkanal.send(embed);
+
+    const filter = m => m.author.id === member.user.id;
+    const collector = kayıtkanal.createMessageCollector(filter, { time: 0 });
+
+    collector.on('collect', async collected => {
+      if(s == true) return;
+          if(ç == false) {
+          const cm = collected;
+          if(cm.content.split('').some(x => !isNaN(x))) cm.reply('**Sadece ismini yaz.** *Yaşını değil.*');
+
+            const isimler = require('./isimler.json').map(x => x);
+            if(!isimler.some(x => x.name.toLowerCase() === cm.content.toLowerCase())) cm.reply(`**İsmini yazman gerekiyor dostum!**\n**Bilgi:**\` İsminiz Elifnur gibiyse Elif yazın, sadece isim yazın.\``);
+            const data = isimler.find(x => x.name.toLowerCase() === cm.content.toLowerCase());
+            const embed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setFooter(`Bilgi: İsmini yanlış yazdıysan: !ksıfırla`, `https://images-ext-2.discordapp.net/external/6eGBGtaebZg_DNdSL4jVLiZ2YQuovw227N4TKd30gzo/https/images-ext-2.discordapp.net/external/H1DYiroEN5EFPujb_YvV-LhXsuIWi3w8gqs69BQbAJ0/%253Fsize%253D2048/https/cdn.discordapp.com/avatars/602585371489861634/59d888f59b9e01bdebb98e8f0548ac2d.png`)
+            .setDescription(`Merhaba, ${data.name.split('')[0].toUpperCase()}${data.name.split('').slice(1).join('')}, şimdi **yaşını yaz.**`)
+            kayıtkanal.send(embed);
+            ç = true;
+            if(s == false) {
+            const collectorr = kayıtkanal.createMessageCollector(filter, { time: 0 });
+            var x = false;
+            collectorr.on('collect', collectedd => {
+              if(x == true) return;
+              const cd = collectedd;
+              if(isNaN(cd.content)) return cd.reply(`**Yaşını **\`(sayı)\`** olarak sadece yaz.**`);
+              if(cd.content == 31) return cd.reply(`Aaaa. 31 ne alaka! 31 yaşında olamazsın sanırım öyle değil mi :3`);
+              if(Number(cd.content) > 32) return cd.reply(`Merhaba saygı değer büyüğümüz. ${cd.content} yaşında olduğunuzu tespit edmemiz gerek. Yetkili birisine yazın.`);
+              member.roles.remove(database.fetch(`kayıt-kayıtsız.${guild.id}`));
+              if(data.sex == 'K') {
+                member.roles.add(kadın.id);
+              } else {
+                member.roles.add(erkek.id);
+              };
+              database.set(`k.${guild.id}.${user.id}`, { 
+                name: `${data.name.split('')[0].toUpperCase()}${data.name.split('').slice(1).join('')}`,
+                sex: data.sex,
+                yaş: Number(cd.content)
+              });
+              s = true;
+              x = true;
+              member.setNickname(`${database.fetch(`kayıt-tag.${guild.id}`) ? `${database.fetch(`kayıt-tag.${guild.id}`)} ` : ''}${data.name.split('')[0].toUpperCase()}${data.name.split('').slice(1).join('')} | ${cd.content}`);
+              return kayıtkanal.send(`Kayıt başarıyla tamamlandı. İyi eğlenceler **${data.name.split('')[0].toUpperCase()}${data.name.split('').slice(1).join('')}**`);
+      
+            });
+          };
+        };
+        });
+
+  };
+
+});
 
 client.login(process.env.TOKEN);
