@@ -547,4 +547,54 @@ client.on('guildMemberAdd', async member => {
 
 });
 
+client.on("message", async message => {
+  try {
+    if (message.author.bot || !message.guild) return;
+
+    if (!db.get(`xp_${message.author.id}`)) {
+      db.set(`xp_${message.author.id}`, 0);
+      db.set(`level_${message.author.id}`, 0);
+    }
+
+    if (db.get(`xp_${message.author.id}`) >= "500") {
+      let xp1 = db.get(`xp_${message.author.id}`);
+      db.set(`xp_${message.author.id}`, +xp1 - 500);
+      db.add(`level_${message.author.id}`, 1);
+      let level1 = db.get(`level_${message.author.id}`);
+      message.channel
+        .send(
+          `${message.author} tebrikler seviye **${level1}** oldun! Seviyen hakkında detaylı bilgi için **!rank**.`
+        )
+        .catch(() => {});
+    }
+
+    const xp = db.get(`xp_${message.author.id}`);
+    const level = db.get(`level_${message.author.id}`);
+
+    if (message.content === "!rank") {
+      const image = await new DCanvas.RankCard()
+        .setAvatar(message.author.displayAvatarURL({ format: "png" }))
+        .setXP("current", +xp)
+        .setXP("needed", 500)
+        .setLevel(+level)
+        .setRankName(message.guild.name)
+        .setRank()
+        .setUsername(message.author.username)
+        .setBackground(
+          "https://i.hizliresim.com/687l3ew.png"
+        )
+        .toAttachment();
+      const attachment = new Discord.MessageAttachment(
+        image.toBuffer(),
+        "rank-card.png"
+      );
+      message.channel.send(attachment).catch(() => {});
+    }
+
+    await db.add(`xp_${message.author.id}`, 3);
+  } catch (h) {
+    console.trace(h);
+  }
+});
+
 client.login(process.env.TOKEN);
