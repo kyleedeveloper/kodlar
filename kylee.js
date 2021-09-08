@@ -579,9 +579,15 @@ client.on("message", async message => {
         .setLevel(+level)
         .setRankName(message.guild.name)
         .setRank()
+        .setReputation(450)
+        .setRank(2)
+        .setBadge(1, "gold")
+        .setBadge(3, "diamond")
+        .setBadge(5, "silver")
+        .setBadge(6, "bronze")
         .setUsername(message.author.username)
         .setBackground(
-          "https://i.hizliresim.com/687l3ew.png"
+          "https://i.hizliresim.com/p5lvmpn.png"
         )
         .toAttachment();
       const attachment = new Discord.MessageAttachment(
@@ -596,5 +602,7 @@ client.on("message", async message => {
     console.trace(h);
   }
 });
+
+
 
 client.login(process.env.TOKEN);
