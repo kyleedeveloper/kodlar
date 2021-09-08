@@ -4,11 +4,9 @@ app.use(express.static("public"));
 const queue = new Map();
 const { apikey } = require('./ayarlar.json');
 const Discord = require("discord.js");
+const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json')
 const YouTube = require('simple-youtube-api');
-const client = new Discord.Client();
-const Canvacord = require("canvacord");
-const canva = new Canvacord();
 const ffmpeg = require('ffmpeg');
 const DCanvas = require("discord-canvas");
 const youtube = new YouTube('apikey');
@@ -453,61 +451,7 @@ client.on('guildMemberAdd', member => {
   }
 })
 
-client.on("message", async msg => {
-  
-  if (msg.channel.type === "dm") return;
-  if(msg.author.bot) return;  
-  
-  if (msg.content.length > 7) {
-    
-    db.add(`puan_${msg.author.id + msg.guild.id}`, 3)
-};
-
-  if (db.fetch(`puan_${msg.author.id + msg.guild.id}`) > 150) {
-    
-    db.add(`seviye_${msg.author.id + msg.guild.id}`, 1)
-    
-    db.delete(`puan_${msg.author.id + msg.guild.id}`)
-    
-  };
-  
-});
 
 
-client.on("ready", () => {
-    console.log("I'm online!");
-});
-
-client.on("message", async (message) => {
-    if (message.author.bot) return;
-    if (message.content === "!trigger") {
-        let avatar = message.author.displayAvatarURL({ dynamic: false, format: 'png' });
-        let image = await canva.trigger(avatar);
-        let attachment = new Discord.MessageAttachment(image, "triggered.gif");
-        return message.channel.send(attachment);
-    }
-    if (message.content === "!delete") {
-        let avatar = message.author.displayAvatarURL({ dynamic: false, format: 'png' });
-        let image = await canva.delete(avatar);
-        let attachment = new Discord.MessageAttachment(image, "deleted.png");
-        return message.channel.send(attachment);
-    }
-    if (message.content === "!rank") {
-        let rank = getRankSomehow();
-        let image = await canva.rank({ 
-            username, 
-            discrim, 
-            level: rank.level, 
-            rank: rank.rank, 
-            neededXP: rank.neededXP, 
-            currentXP: rank.currentXP, 
-            avatarURL: message.author.displayAvatarURL({ format: "png" }), 
-            color: "white", 
-            background: "https://link-to/superDuperBackground"
-        });
-        let attachment = new Discord.MessageAttachment(image, "rank.png");
-        return message.channel.send(attachment);
-    }
-});
 
 client.login(process.env.TOKEN);
