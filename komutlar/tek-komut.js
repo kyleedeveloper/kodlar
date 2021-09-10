@@ -6,14 +6,12 @@ const Discord = require('discord.js');
 exports.run = function(client, message) { // Beyefendi Kod Paylaşım
 const bikod = new Discord.MessageEmbed ()
 .setColor('#304FFE')
-.setTitle('yardım Komutları')
+.setTitle('mod Komutları')
 .setTimestamp()
-.addField('!genel','Genel Komutlara Bakarsın')
-.addField('!tek-komut','Tek Komut Komutlarına Bakarsın')
-.addField('!mod','Ayarlamalı Komutlara Bakarsın')
+.addField('!guard','tek komutla tüm guar')
 .addField("Botu Sunucuna Ekle", "[TIKLA!](https://discord.com/api/oauth2/authorize?client_id=856820108815237130&permissions=8&scope=bot)")
 .addField("Botun Web Sitesi", "[TIKLA!](https://kylee.tk/)")
-.addField("Sunucumuza Katıl", "[TIKLA!](https://discord.gg/yYVhnh7Wfa)")
+.addField("Destek Sunucumuza Katıl", "[TIKLA!](https://discord.gg/yYVhnh7Wfa)")
 .setFooter('Kyle BOT')
 .setTimestamp()
 .setThumbnail(client.user.avatarURL)
@@ -29,7 +27,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'yardım',
+  name: 'tek-komut',
   description: 'Tüm komutları gösterir.',
-  usage: 'yardım'
+  usage: 'tek-komut'
 };
