@@ -349,40 +349,6 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     if (!i) return;
 });
 
-
-client.on("message", async message => {
-      const ms = require("parse-ms");
-    
-      if (message.author.bot) return;
-      if (!message.guild) return;
-      if (message.content.includes(`${prefix}afk`)) return;
-    
-      if (await db.fetch(`afk_${message.author.id}`)) {
-        let süre = await db.fetch(`afk_süre_${message.author.id}`);
-        let zaman = ms(Date.now() - süre);
-        db.delete(`afk_${message.author.id}`);
-        db.delete(`afk_süre_${message.author.id}`);
-        message.member.setNickname(db.fetch(`afktag_${message.author.id}`))
-        const afk_cikis = new Discord.MessageEmbed()
-          .setColor("304FFE")
-          .setDescription(`<@${message.author.id}>\`${zaman.hours}\` **saat**  \`${zaman.minutes}\` **dakika** \`${zaman.seconds}\` **saniye** , **AFK Modundaydın!**`)
-        message.channel.send(afk_cikis)}
-      
-    
-      var kullanıcı = message.mentions.users.first();
-      if (!kullanıcı) return;
-      var sebep = await db.fetch(`afk_${kullanıcı.id}`);
-    
-      if (sebep) {
-        let süre = await db.fetch(`afk_süre_${kullanıcı.id}`);
-        let zaman = ms(Date.now() - süre);
-        const afk_uyarı = new Discord.MessageEmbed()
-          .setColor("304FFE")
-          .setDescription(`<@${kullanıcı.id}> adlı kullanıcı \`${sebep}\` sebebiyle; \`${zaman.hours}\` **saat**  \`${zaman.minutes}\` **dakika** \`${zaman.seconds}\` **saniyedir AFK!**`)
-        message.reply(afk_uyarı)}
-      
-    });
-
 client.on("ready", () => {
 client.channels.cache.get('883077048644542484').join();
 });
