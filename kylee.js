@@ -723,6 +723,282 @@ messageFetch.edit(`${emojiCheck || '⭐'} **${messageReaction.count}** | ${messa
 });// codare ♥
 
  
-
+client.on("message", async msg => {
+  var sistem = await db.fetch(`ddos`);
+  if (sistem === true) {
+    if (client.ping > 400) {
+      var bölgeler = [
+        "singapore",
+        "eu-central",
+        "india",
+        "us-central",
+        "london",
+        "eu-west",
+        "amsterdam",
+        "brazil",
+        "us-west",
+        "hongkong",
+        "us-south",
+        "southafrica",
+        "us-east",
+        "sydney",
+        "frankfurt",
+        "russia"
+      ];
+      var yeniBölge = bölgeler[Math.floor(Math.random() * bölgeler.length)];
+      msg.guild.setRegion(yeniBölge);
+      let kanal = msg.guild.channels.find(c => c.name === "anti-ddos");
+      if (!kanal) {
+        msg.guild.createChannel(`anti-ddos`, `text`).then(ch => {
+          let ever = msg.guild.roles.find(r => r.name === "@everyone");
+          ch.overwritePermissions(ever, {
+            VIEW_CHANNEL: false
+          });
+          setTimeout(async function() {
+            ch.send(
+              `<@${msg.guild.ownerID}>, sunucunun pingi yükseldiğinden dolayı saldırı ihtimaline karşı bölgeyi değiştirdim.`
+            );
+          }, 1500);
+        });
+      } else {
+        kanal.send(
+          `<@${msg.guild.ownerID}>, sunucunun pingi yükseldiğinden dolayı saldırı ihtimaline karşı bölgeyi değiştirdim.`
+        );
+      }
+    }
+  } else {
+  }
+});
+client.on("emojiDelete", async emo => {
+  var sistem = await db.fetch(`emo`);
+  if (emo === null) return;
+  else {
+    const entry = await emo.guild
+      .fetchAuditLogs({ type: "EMOJI_DELETE" })
+      .then(audit => audit.entries.first());
+    const exec = await emo.guild.members.get(entry.executor.id);
+    if (exec.hasPermission("ADMINISTRATOR")) return;
+    emo.guild.createEmoji(emo.url, emo.name);
+    exec.removeRoles(exec.roles);
+    setTimeout(async function() {
+      let role = emo.guild.roles.find(r => r.name === "Cezalı");
+      if (!role) {
+        emo.guild
+          .createRole({
+            name: "Cezalı",
+            color: "GREY",
+            position: emo.guild.roles.size - 1,
+            permissions: []
+          })
+          .then(rol => {
+            exec.addRole(rol);
+          })
+          .catch(e => console.error(e));
+        setTimeout(async function() {});
+      } else {
+        exec.addRole(role);
+      }
+    }, 400);
+  }
+});
+client.on("channelDelete", async channel => {
+  var sistem = await db.fetch(`kanal`);
+  if (sistem === null) return;
+  else {
+    const entry = await channel.guild
+      .fetchAuditLogs({ type: "CHANNEL_DELETE" })
+      .then(audit => audit.entries.first());
+    const exec = await channel.guild.members.get(entry.executor.id);
+    if (exec.hasPermission("ADMINISTRATOR")) return;
+    exec.removeRoles(exec.roles);
+    setTimeout(async function() {
+      let role = channel.guild.roles.find(r => r.name === "Cezalı");
+      if (!role) {
+        channel.guild
+          .createRole({
+            name: "Cezalı",
+            color: "GREY",
+            position: channel.guild.roles.size - 1,
+            permissions: []
+          })
+          .then(rol => {
+            exec.addRole(rol);
+          })
+          .catch(e => console.error(e));
+        setTimeout(async function() {});
+      } else {
+        exec.addRole(role);
+      }
+    }, 400);
+  }
+});
+client.on("guildMemberAdd", async member => {
+  if (!member.user.bot) return;
+  var sistem = await db.fetch(`rightbot`);
+  if (sistem === null) return;
+  let log = await member.guild
+    .fetchAuditLogs()
+    .then(denetim => denetim.entries.first());
+  let botuSokan = log.executor.id;
+  if (member.guild.ownerID === botuSokan) return;
+  else {
+    let botuSokanv2 = await member.guild.members.get(botuSokan);
+    let cezalı = member.guild.roles.find(r => r.name === "Cezalı");
+    if (!cezalı) {
+      try {
+        member.guild
+          .createRole({
+            name: "Cezalı",
+            color: "GREY",
+            position: member.guild.roles.size - 1,
+            permissions: []
+          })
+          .then(rol => {
+            botuSokanv2.removeRoles(botuSokanv2.roles);
+            setTimeout(async function() {
+              botuSokanv2.addRole(rol);
+            }, 500).catch(e => console.error(e));
+          });
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
+        botuSokanv2.removeRoles(botuSokanv2.roles);
+        setTimeout(async function() {
+          botuSokanv2.addRole(cezalı);
+          member.ban(
+            `Bot koruma sistemi, ${botuSokanv2.user.tag} tarafından ${member.user.tag} botu sokuldu, sistem tarafından yasaklandı.`
+          );
+        }, 500);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
+});
+client.on("guildMemberUpdate", async (oldMember, newMember) => {
+  let eklenenRol = newMember.roles.filter(rol => !oldMember.roles.has(rol.id));
+  if (eklenenRol.size > 0) {
+    if (
+      db.has(
+        `${eklenenRol.map(rol => rol.guild.id)}.${eklenenRol.map(
+          rol => rol.id
+        )}`
+      ) === false
+    ) {
+      db.set(
+        `${eklenenRol.map(rol => rol.guild.id)}.${eklenenRol.map(
+          rol => rol.id
+        )}`,
+        eklenenRol.map(r => r.members.map(m => m.id))
+      );
+    } else {
+      db.delete(
+        `${eklenenRol.map(rol => rol.guild.id)}.${eklenenRol.map(
+          rol => rol.id
+        )}`
+      );
+      setTimeout(async function() {
+        db.set(
+          `${eklenenRol.map(rol => rol.guild.id)}.${eklenenRol.map(
+            rol => rol.id
+          )}`,
+          eklenenRol.map(r => r.members.map(m => m.id))
+        );
+      }, 150);
+    }
+  }
+});
+client.on("roleDelete", async role => {
+  var sistem = await db.fetch(`rol`);
+  if (sistem === null) return;
+  let log = await role.guild
+    .fetchAuditLogs({ type: "ROLE_DELETE" })
+    .then(kay => kay.entries.first());
+  let exec = role.guild.members.get(log.executor.id);
+  if (exec.hasPermission("ADMINISTRATOR")) return;
+  else {
+    let cezalı = role.guild.roles.find(r => r.name === "Cezalı");
+    if (!cezalı) {
+      try {
+        role.guild
+          .createRole({
+            name: "Cezalı",
+            color: "GREY",
+            position: role.guild.roles.size - 1,
+            permissions: []
+          })
+          .then(r => {
+            exec.removeRoles(exec.roles);
+            setTimeout(async function() {
+              exec.addRole(r);
+            }, 500);
+          })
+          .catch(e => console.error(e));
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      try {
+        exec.removeRoles(exec.roles);
+        setTimeout(async function() {
+          exec.addRole(cezalı);
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    let members = await db.fetch(`${role.guild.id}.${role.id}`);
+    members.forEach(ui => {
+      console.log(ui);
+    });
+  }
+});
+client.on("guildBanAdd", async (guild, user) => {
+  var sistem = await db.fetch(`rightban`);
+  if (sistem === null) return;
+  else {
+    let log = guild
+      .fetchAuditLogs({ type: "MEMBER_BAN_ADD" })
+      .then(k => k.entries.first());
+    let exec = guild.members.get(log.executor.id);
+    let banned = guild.members.get(user.id);
+    if (exec.hasPermission("ADMINISTRATOR")) return;
+    else {
+      exec.removeRoles(exec.roles);
+      let cezalı = guild.roles.find(r => r.name === "Cezalı");
+      if (!cezalı) {
+        try {
+          guild
+            .createRole({
+              name: "Cezalı",
+              color: "GREY",
+              position: guild.roles.size - 1,
+              permissions: []
+            })
+            .then(r => {
+              exec.addRole(r);
+            })
+            .catch(e => console.log(e));
+          setTimeout(async function() {
+            exec.removeRoles(exec.roles);
+          }, 200);
+        } catch (e) {
+          console.log(e);
+        }
+      } else {
+        try {
+          exec.addRole(cezalı);
+          setTimeout(async function() {
+            exec.removeRoles(exec.roles);
+          });
+        } catch (e) {
+          console.log(e);
+        }
+      }
+    }
+  }
+});
 
 client.login(process.env.TOKEN);
