@@ -162,7 +162,7 @@ client.on("message", async msg => {
 
 client.on("ready", () => {
   client.user.setActivity(
-    `!yardım | ${client.guilds.cache.size} Sunucu`
+    `✨ !yardım -en hızlı gelişip yükselen bot!`
   );
 })
 
